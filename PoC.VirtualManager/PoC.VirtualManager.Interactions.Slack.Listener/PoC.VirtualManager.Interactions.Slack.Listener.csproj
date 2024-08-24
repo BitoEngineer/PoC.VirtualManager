@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Prompts\GenerateChatInteractionsPrompt.txt" />
+    <None Remove="Prompts\GenerateChatInteractionsPromptPlainText.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Prompts\GenerateChatInteractionsPrompt.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Prompts\GenerateChatInteractionsPromptPlainText.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.SemanticKernel.Connectors.OpenAI" Version="1.17.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PoC.VirtualManager.Interactions.Models\PoC.VirtualManager.Interactions.Models.csproj" />
+  </ItemGroup>
+
+</Project>

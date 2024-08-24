@@ -1,0 +1,129 @@
+{
+  "TeamName": "Azure DevOps Core Team",
+  "ProjectName": "Azure Pipelines Enhancement",
+  "Department": "Cloud & AI",
+  "DomainExpertise": "Cloud Infrastructure",
+  "TechnicalExpertise": "CI/CD, Microservices, Distributed Systems",
+  "Members": [
+    {
+      "Name": "Alice Johnson",
+      "Role": "Team Lead / Senior Software Engineer",
+      "Age": 37,
+      "Background": "Computer Science, Full-Stack Development",
+      "YearsOfExperience": 15,
+      "PersonalityTraitsScore": {
+        "Openness": 85,
+        "Intellect": 90,
+        "OpennessToExperience": 80,
+        "Volatility": 20,
+        "Withdrawal": 15,
+        "Neuroticism": 18,
+        "Assertiveness": 85,
+        "Enthusiasm": 75,
+        "Extraversion": 80,
+        "Orderliness": 90,
+        "Industriousness": 95,
+        "Conscientiousness": 93,
+        "Politeness": 85,
+        "Compassion": 80,
+        "Agreeableness": 88
+      }
+    },
+    {
+      "Name": "Bob Martinez",
+      "Role": "Cloud Solutions Architect",
+      "Age": 42,
+      "Background": "Cloud Architecture, Networking",
+      "YearsOfExperience": 18,
+      "PersonalityTraitsScore": {
+        "Openness": 78,
+        "Intellect": 88,
+        "OpennessToExperience": 76,
+        "Volatility": 25,
+        "Withdrawal": 20,
+        "Neuroticism": 22,
+        "Assertiveness": 82,
+        "Enthusiasm": 70,
+        "Extraversion": 74,
+        "Orderliness": 85,
+        "Industriousness": 90,
+        "Conscientiousness": 92,
+        "Politeness": 80,
+        "Compassion": 78,
+        "Agreeableness": 82
+      }
+    },
+    {
+      "Name": "Charlie Wang",
+      "Role": "DevOps Engineer",
+      "Age": 29,
+      "Background": "Systems Engineering, Automation",
+      "YearsOfExperience": 7,
+      "PersonalityTraitsScore": {
+        "Openness": 70,
+        "Intellect": 85,
+        "OpennessToExperience": 72,
+        "Volatility": 30,
+        "Withdrawal": 18,
+        "Neuroticism": 20,
+        "Assertiveness": 75,
+        "Enthusiasm": 65,
+        "Extraversion": 68,
+        "Orderliness": 80,
+        "Industriousness": 88,
+        "Conscientiousness": 87,
+        "Politeness": 75,
+        "Compassion": 72,
+        "Agreeableness": 78
+      }
+    },
+    {
+      "Name": "Diana Kapoor",
+      "Role": "Product Manager",
+      "Age": 34,
+      "Background": "Business Administration, Product Management",
+      "YearsOfExperience": 10,
+      "PersonalityTraitsScore": {
+        "Openness": 92,
+        "Intellect": 89,
+        "OpennessToExperience": 94,
+        "Volatility": 22,
+        "Withdrawal": 16,
+        "Neuroticism": 19,
+        "Assertiveness": 87,
+        "Enthusiasm": 80,
+        "Extraversion": 82,
+        "Orderliness": 88,
+        "Industriousness": 91,
+        "Conscientiousness": 90,
+        "Politeness": 84,
+        "Compassion": 86,
+        "Agreeableness": 90
+      }
+    },
+    {
+      "Name": "Ethan O'Neil",
+      "Role": "Quality Assurance Engineer",
+      "Age": 31,
+      "Background": "Software Testing, Automation",
+      "YearsOfExperience": 9,
+      "PersonalityTraitsScore": {
+        "Openness": 75,
+        "Intellect": 82,
+        "OpennessToExperience": 78,
+        "Volatility": 28,
+        "Withdrawal": 19,
+        "Neuroticism": 24,
+        "Assertiveness": 78,
+        "Enthusiasm": 70,
+        "Extraversion": 72,
+        "Orderliness": 83,
+        "Industriousness": 85,
+        "Conscientiousness": 86,
+        "Politeness": 78,
+        "Compassion": 75,
+        "Agreeableness": 80
+      }
+    }
+  ]
+}

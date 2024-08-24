@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager", "PoC.VirtualManager\PoC.VirtualManager.csproj", "{98965094-30A9-4E6B-9DB1-35549FD62F50}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Teams.Client", "PoC.VirtualManager.TeamsAPI.Client\PoC.VirtualManager.Teams.Client.csproj", "{A5BE850E-F77E-4BC0-AD46-09F60328B4BB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Teams.Plugins", "PoC.VirtualManager.Plugins\PoC.VirtualManager.Teams.Plugins.csproj", "{B6DDBEBF-CBD7-4EF1-B7C0-FB15A4BC4690}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoC.VirtualManager.Interactions.Slack.Listener", "PoC.VirtualManager.Interactions.Slack.Listener\PoC.VirtualManager.Interactions.Slack.Listener.csproj", "{959B8190-4247-41EE-A2A7-259C329899C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoC.VirtualManager.Interactions.GoogleMeets.Listener", "PoC.VirtualManager.Interactions.GoogleMeets.Listener\PoC.VirtualManager.Interactions.GoogleMeets.Listener.csproj", "{EB2D7161-FAA7-4B19-8DE8-8CEF797D4E8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "interactions", "interactions", "{4969CDB6-6E08-4FED-AC3F-BD62084B4A81}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "teams", "teams", "{3F61B614-049C-4457-9DBE-51039A473481}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoC.VirtualManager.Interactions.Models", "PoC.VirtualManager.Interactions.Models\PoC.VirtualManager.Interactions.Models.csproj", "{5B0149CE-5FC7-409F-826C-B7486BDE06C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98965094-30A9-4E6B-9DB1-35549FD62F50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98965094-30A9-4E6B-9DB1-35549FD62F50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98965094-30A9-4E6B-9DB1-35549FD62F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98965094-30A9-4E6B-9DB1-35549FD62F50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5BE850E-F77E-4BC0-AD46-09F60328B4BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5BE850E-F77E-4BC0-AD46-09F60328B4BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5BE850E-F77E-4BC0-AD46-09F60328B4BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5BE850E-F77E-4BC0-AD46-09F60328B4BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6DDBEBF-CBD7-4EF1-B7C0-FB15A4BC4690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6DDBEBF-CBD7-4EF1-B7C0-FB15A4BC4690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6DDBEBF-CBD7-4EF1-B7C0-FB15A4BC4690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6DDBEBF-CBD7-4EF1-B7C0-FB15A4BC4690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{959B8190-4247-41EE-A2A7-259C329899C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{959B8190-4247-41EE-A2A7-259C329899C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{959B8190-4247-41EE-A2A7-259C329899C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{959B8190-4247-41EE-A2A7-259C329899C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB2D7161-FAA7-4B19-8DE8-8CEF797D4E8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB2D7161-FAA7-4B19-8DE8-8CEF797D4E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB2D7161-FAA7-4B19-8DE8-8CEF797D4E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB2D7161-FAA7-4B19-8DE8-8CEF797D4E8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B0149CE-5FC7-409F-826C-B7486BDE06C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B0149CE-5FC7-409F-826C-B7486BDE06C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B0149CE-5FC7-409F-826C-B7486BDE06C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B0149CE-5FC7-409F-826C-B7486BDE06C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A5BE850E-F77E-4BC0-AD46-09F60328B4BB} = {3F61B614-049C-4457-9DBE-51039A473481}
+		{B6DDBEBF-CBD7-4EF1-B7C0-FB15A4BC4690} = {3F61B614-049C-4457-9DBE-51039A473481}
+		{959B8190-4247-41EE-A2A7-259C329899C4} = {4969CDB6-6E08-4FED-AC3F-BD62084B4A81}
+		{EB2D7161-FAA7-4B19-8DE8-8CEF797D4E8E} = {4969CDB6-6E08-4FED-AC3F-BD62084B4A81}
+		{5B0149CE-5FC7-409F-826C-B7486BDE06C1} = {4969CDB6-6E08-4FED-AC3F-BD62084B4A81}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE73187D-7066-44CB-A088-C27CA58A1FD4}
+	EndGlobalSection
+EndGlobal

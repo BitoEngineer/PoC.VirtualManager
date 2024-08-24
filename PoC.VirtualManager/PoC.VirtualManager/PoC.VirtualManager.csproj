@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="appsettings.json" />
+    <None Remove="Prompts\AnalyzeInteractionsPrompt.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Prompts\AnalyzeInteractionsPrompt.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="Microsoft.SemanticKernel.Connectors.OpenAI" Version="1.17.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PoC.VirtualManager.Interactions.GoogleMeets.Listener\PoC.VirtualManager.Interactions.GoogleMeets.Listener.csproj" />
+    <ProjectReference Include="..\PoC.VirtualManager.Interactions.Slack.Listener\PoC.VirtualManager.Interactions.Slack.Listener.csproj" />
+    <ProjectReference Include="..\PoC.VirtualManager.Plugins\PoC.VirtualManager.Teams.Plugins.csproj" />
+    <ProjectReference Include="..\PoC.VirtualManager.TeamsAPI.Client\PoC.VirtualManager.Teams.Client.csproj" />
+  </ItemGroup>
+
+</Project>
