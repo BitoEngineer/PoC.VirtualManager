@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.SemanticKernel;
 using PoC.VirtualManager;
 using PoC.VirtualManager.Interactions.Slack.Listener.Extensions;
+using PoC.VirtualManager.Interactions.Slack.Provider.Extensions;
 using PoC.VirtualManager.Interactions.GoogleMeets.Listener.Extensions;
 using PoC.VirtualManager.Personality;
 using PoC.VirtualManager.Plugins;
@@ -18,7 +19,7 @@ IHost host = Host.CreateDefaultBuilder(args)
     })
     .ConfigureServices((context, services) =>
     {
-        var openAiKey = Environment.GetEnvironmentVariable("VirtualManager_OpenAI_ApiKey") ?? throw new Exception("AI:OpenAI:ApiKey env variable must be set");
+        var openAiKey = Environment.GetEnvironmentVariable("VirtualManager_OpenAI_ApiKey") ?? throw new Exception("VirtualManager_OpenAI_ApiKey env variable must be set");
         var personalitySection = context.Configuration.GetSection("Personality");
         var personality = personalitySection.Get<Personality>();
 
@@ -30,7 +31,6 @@ IHost host = Host.CreateDefaultBuilder(args)
         services.AddKernel();
         services.AddTeamsKernelPlugins();
 
-        services.AddKeyedSingleton("interactionsChannel", Channel.CreateUnbounded<string>());
         services.AddSingleton(_=> {
             var writer = new StreamWriter(
                 path: context.Configuration["FileDirectory"] + $"VirtualManager.txt", //_{DateTime.UtcNow.ToString("yyyyMMddTHHmm")}
@@ -41,8 +41,10 @@ IHost host = Host.CreateDefaultBuilder(args)
             return writer;
             });
 
-        services.AddSlackInteractionsListener();
-        services.AddGoogleMeetsInteractionsListener();
+        var slackAccessToken = Environment.GetEnvironmentVariable("VirtualManager_Slack_AccessToken") ?? throw new Exception("VirtualManager_Slack_AccessToken env variable must be set");
+        services.AddSlackInteractionsListener(slackAccessToken);
+        services.AddSlackFeedbackProvider(slackAccessToken);
+        //services.AddGoogleMeetsInteractionsListener();
         services.AddHostedService<Brain>();
     })
     .Build();

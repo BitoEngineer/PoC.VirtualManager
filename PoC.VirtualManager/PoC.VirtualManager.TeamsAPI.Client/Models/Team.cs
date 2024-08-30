@@ -2,8 +2,9 @@
 {
     public class Team
     {
+        public int CompanyId { get; set; }
         public string TeamName { get; set; }
-        public List<TeamMember> Members { get; set; } = new List<TeamMember>();
+        public List<int> TeamMembersIds { get; set; } = new List<int>();
         public string ProjectName { get; set; }
         public string Department { get; set; }
         public string DomainExpertise { get; set; }

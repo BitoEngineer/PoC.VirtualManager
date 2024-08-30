@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using PoC.VirtualManager.Teams.Client.Stubs;
+using PoC.VirtualManager.Teams.Plugins;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace PoC.VirtualManager.Plugins
         public static IServiceCollection AddTeamsKernelPlugins(this IServiceCollection services)
         {
             services.AddScoped<PersonalityKernelPlugin>();
+            services.AddScoped<CompanyKernelPlugin>();
             services.AddScoped<TeamKernelPlugin>();
 
             return services;

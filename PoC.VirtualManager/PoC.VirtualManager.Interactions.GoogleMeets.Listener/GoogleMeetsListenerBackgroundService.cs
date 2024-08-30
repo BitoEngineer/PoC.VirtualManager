@@ -61,7 +61,7 @@ namespace PoC.VirtualManager.Interactions.GoogleMeets.Listener.Stub
         {
             var promptToGenerateInteraction = await File.ReadAllTextAsync("Prompts/GenerateMeetingTranscriptPromptJson.txt");
             var interactionJson = (await _chatCompletionService.GetChatMessageContentAsync(promptToGenerateInteraction)).Content;
-            if (!interactionJson.TryDeserialize(typeof(Chat), out object interaction))
+            if (!interactionJson.TryDeserialize(typeof(ChatInteractions), out object interaction))
             {
                 throw new Exception("Could not parse response: " + interactionJson);
             }

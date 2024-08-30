@@ -31,6 +31,7 @@
   <ItemGroup>
     <ProjectReference Include="..\PoC.VirtualManager.Interactions.GoogleMeets.Listener\PoC.VirtualManager.Interactions.GoogleMeets.Listener.csproj" />
     <ProjectReference Include="..\PoC.VirtualManager.Interactions.Slack.Listener\PoC.VirtualManager.Interactions.Slack.Listener.csproj" />
+    <ProjectReference Include="..\PoC.VirtualManager.Interactions.Slack.Provider\PoC.VirtualManager.Interactions.Slack.Provider.csproj" />
     <ProjectReference Include="..\PoC.VirtualManager.Plugins\PoC.VirtualManager.Teams.Plugins.csproj" />
     <ProjectReference Include="..\PoC.VirtualManager.TeamsAPI.Client\PoC.VirtualManager.Teams.Client.csproj" />
   </ItemGroup>

@@ -9,15 +9,31 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Teams.Cl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Teams.Plugins", "PoC.VirtualManager.Plugins\PoC.VirtualManager.Teams.Plugins.csproj", "{B6DDBEBF-CBD7-4EF1-B7C0-FB15A4BC4690}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoC.VirtualManager.Interactions.Slack.Listener", "PoC.VirtualManager.Interactions.Slack.Listener\PoC.VirtualManager.Interactions.Slack.Listener.csproj", "{959B8190-4247-41EE-A2A7-259C329899C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Interactions.Slack.Listener", "PoC.VirtualManager.Interactions.Slack.Listener\PoC.VirtualManager.Interactions.Slack.Listener.csproj", "{959B8190-4247-41EE-A2A7-259C329899C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoC.VirtualManager.Interactions.GoogleMeets.Listener", "PoC.VirtualManager.Interactions.GoogleMeets.Listener\PoC.VirtualManager.Interactions.GoogleMeets.Listener.csproj", "{EB2D7161-FAA7-4B19-8DE8-8CEF797D4E8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Interactions.GoogleMeets.Listener", "PoC.VirtualManager.Interactions.GoogleMeets.Listener\PoC.VirtualManager.Interactions.GoogleMeets.Listener.csproj", "{EB2D7161-FAA7-4B19-8DE8-8CEF797D4E8E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "interactions", "interactions", "{4969CDB6-6E08-4FED-AC3F-BD62084B4A81}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "teams", "teams", "{3F61B614-049C-4457-9DBE-51039A473481}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoC.VirtualManager.Interactions.Models", "PoC.VirtualManager.Interactions.Models\PoC.VirtualManager.Interactions.Models.csproj", "{5B0149CE-5FC7-409F-826C-B7486BDE06C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Interactions.Models", "PoC.VirtualManager.Interactions.Models\PoC.VirtualManager.Interactions.Models.csproj", "{5B0149CE-5FC7-409F-826C-B7486BDE06C1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Interactions.Processor", "PoC.VirtualManager.Interactions.Processor\PoC.VirtualManager.Interactions.Processor.csproj", "{93E6E42F-FFFC-410A-AF31-7BB4F2885FF1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9E2795C1-3FA1-4BB2-BDD7-E2667E0CC5BF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Slack.Client.Tests", "PoC.VirtualManager.Interactions.Slack.Listener.Tests\PoC.VirtualManager.Slack.Client.Tests.csproj", "{FABB1F7F-DD22-411B-8F3F-D7C1D4A0735B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "listeners", "listeners", "{4E9325BA-9E60-4901-B39A-40411F113349}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "providers", "providers", "{DEB8AB9B-9E8F-49A2-BF8C-84D0560FBD73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoC.VirtualManager.Interactions.Slack.Provider", "PoC.VirtualManager.Interactions.Slack.Provider\PoC.VirtualManager.Interactions.Slack.Provider.csproj", "{8D5E97A9-9167-4943-B955-5DE291DD82A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "clients", "clients", "{F5ED676E-EB3D-495C-AFFD-61C77DC24259}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoC.VirtualManager.Slack.Client", "PoC.VirtualManager.Slack.Client\PoC.VirtualManager.Slack.Client.csproj", "{208A66ED-4B0D-4C16-86C4-421362940E9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +65,22 @@ Global
 		{5B0149CE-5FC7-409F-826C-B7486BDE06C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B0149CE-5FC7-409F-826C-B7486BDE06C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B0149CE-5FC7-409F-826C-B7486BDE06C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93E6E42F-FFFC-410A-AF31-7BB4F2885FF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93E6E42F-FFFC-410A-AF31-7BB4F2885FF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93E6E42F-FFFC-410A-AF31-7BB4F2885FF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93E6E42F-FFFC-410A-AF31-7BB4F2885FF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FABB1F7F-DD22-411B-8F3F-D7C1D4A0735B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FABB1F7F-DD22-411B-8F3F-D7C1D4A0735B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FABB1F7F-DD22-411B-8F3F-D7C1D4A0735B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FABB1F7F-DD22-411B-8F3F-D7C1D4A0735B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D5E97A9-9167-4943-B955-5DE291DD82A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D5E97A9-9167-4943-B955-5DE291DD82A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D5E97A9-9167-4943-B955-5DE291DD82A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D5E97A9-9167-4943-B955-5DE291DD82A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{208A66ED-4B0D-4C16-86C4-421362940E9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{208A66ED-4B0D-4C16-86C4-421362940E9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{208A66ED-4B0D-4C16-86C4-421362940E9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{208A66ED-4B0D-4C16-86C4-421362940E9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,9 +88,16 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A5BE850E-F77E-4BC0-AD46-09F60328B4BB} = {3F61B614-049C-4457-9DBE-51039A473481}
 		{B6DDBEBF-CBD7-4EF1-B7C0-FB15A4BC4690} = {3F61B614-049C-4457-9DBE-51039A473481}
-		{959B8190-4247-41EE-A2A7-259C329899C4} = {4969CDB6-6E08-4FED-AC3F-BD62084B4A81}
-		{EB2D7161-FAA7-4B19-8DE8-8CEF797D4E8E} = {4969CDB6-6E08-4FED-AC3F-BD62084B4A81}
+		{959B8190-4247-41EE-A2A7-259C329899C4} = {4E9325BA-9E60-4901-B39A-40411F113349}
+		{EB2D7161-FAA7-4B19-8DE8-8CEF797D4E8E} = {4E9325BA-9E60-4901-B39A-40411F113349}
 		{5B0149CE-5FC7-409F-826C-B7486BDE06C1} = {4969CDB6-6E08-4FED-AC3F-BD62084B4A81}
+		{93E6E42F-FFFC-410A-AF31-7BB4F2885FF1} = {4969CDB6-6E08-4FED-AC3F-BD62084B4A81}
+		{FABB1F7F-DD22-411B-8F3F-D7C1D4A0735B} = {9E2795C1-3FA1-4BB2-BDD7-E2667E0CC5BF}
+		{4E9325BA-9E60-4901-B39A-40411F113349} = {4969CDB6-6E08-4FED-AC3F-BD62084B4A81}
+		{DEB8AB9B-9E8F-49A2-BF8C-84D0560FBD73} = {4969CDB6-6E08-4FED-AC3F-BD62084B4A81}
+		{8D5E97A9-9167-4943-B955-5DE291DD82A2} = {DEB8AB9B-9E8F-49A2-BF8C-84D0560FBD73}
+		{F5ED676E-EB3D-495C-AFFD-61C77DC24259} = {4969CDB6-6E08-4FED-AC3F-BD62084B4A81}
+		{208A66ED-4B0D-4C16-86C4-421362940E9C} = {F5ED676E-EB3D-495C-AFFD-61C77DC24259}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE73187D-7066-44CB-A088-C27CA58A1FD4}
