@@ -3,7 +3,7 @@ using PoC.VirtualManager.Slack.Client.Extensions;
 using PoC.VirtualManager.Slack.Client.Models.Messaging;
 using System.Threading.Channels;
 
-namespace PoC.VirtualManager.Interactions.Slack.Provider.Extensions
+namespace PoC.VirtualManager.Interactions.Slack.Broadcaster.Extensions
 {
     public static class ServiceCollectionExtensions
     {

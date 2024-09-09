@@ -24,4 +24,8 @@
     <PackageReference Include="Microsoft.SemanticKernel.Connectors.OpenAI" Version="1.17.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PoC.VirtualManager.Teams.Repository\PoC.VirtualManager.Teams.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

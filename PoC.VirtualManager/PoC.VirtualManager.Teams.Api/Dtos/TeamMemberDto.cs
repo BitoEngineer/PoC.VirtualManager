@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
+using PoC.VirtualManager.Teams.Client.Models;
+using System.Text.Json.Serialization;
 
-namespace PoC.VirtualManager.Teams.Client.Models
+namespace PoC.VirtualManager.Teams.Api.Dtos
 {
-    public class TeamMember
+    public class TeamMemberDto
     {
-        public int Id { get; set; }
+        public string TeamId { get; set; }
         public int CompanyId { get; set; }
         public int? LineManagerId { get; set; }
         public int? TechLeadId { get; set; }

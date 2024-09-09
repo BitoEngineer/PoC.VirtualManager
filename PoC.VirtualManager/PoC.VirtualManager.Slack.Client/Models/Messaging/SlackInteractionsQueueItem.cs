@@ -9,6 +9,9 @@ namespace PoC.VirtualManager.Slack.Client.Models.Messaging
     public class SlackInteractionsQueueItem
     {
         public string ChannelId { get; set; }
-        public string Message { get; set; }
+        public string ChannelName { get; set; }
+        public string ChannelPurpose { get; set; }
+        public string ChannelTopic { get; set; }
+        public List<SlackMessage> Messages { get; set; }
     }
 }

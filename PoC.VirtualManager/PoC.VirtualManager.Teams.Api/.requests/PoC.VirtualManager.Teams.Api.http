@@ -1,0 +1,64 @@
+### Create a New Team
+POST http://localhost:5000/teams
+Content-Type: application/json
+
+{
+    "teamName": "Engineering",
+    "companyId": 1,
+    "teamMembersIds": [101, 102],
+    "projectName": "Project Alpha",
+    "department": "Development",
+    "domainExpertise": "Software Engineering",
+    "technicalExpertise": "C# and .NET"
+}
+
+### Update an Existing Team
+PUT http://localhost:5000/teams/{id}
+Content-Type: application/json
+
+{
+    "teamName": "Engineering",
+    "companyId": 1,
+    "teamMembersIds": [101, 102, 103],
+    "projectName": "Project Beta",
+    "department": "Development",
+    "domainExpertise": "Software Engineering",
+    "technicalExpertise": "C# and .NET"
+}
+
+### Get a Team by Id
+GET http://localhost:5000/teams/{id}
+
+### Example requests
+# To test, replace `{id}` with actual team IDs.
+
+# For Create a New Team:
+POST http://localhost:5000/teams
+Content-Type: application/json
+
+{
+    "teamName": "New Team",
+    "companyId": 2,
+    "teamMembersIds": [],
+    "projectName": "New Project",
+    "department": "Marketing",
+    "domainExpertise": "Marketing Strategy",
+    "technicalExpertise": "Market Analysis"
+}
+
+# For Update an Existing Team:
+PUT http://localhost:5000/teams/64f5c5d6b09f45d50d4f5eae
+Content-Type: application/json
+
+{
+    "teamName": "Updated Team Name",
+    "companyId": 2,
+    "teamMembersIds": [201],
+    "projectName": "Updated Project",
+    "department": "Sales",
+    "domainExpertise": "Sales Strategy",
+    "technicalExpertise": "Sales Analytics"
+}
+
+# For Get a Team by Id:
+GET http://localhost:5000/teams/64f5c5d6b09f45d50d4f5eae

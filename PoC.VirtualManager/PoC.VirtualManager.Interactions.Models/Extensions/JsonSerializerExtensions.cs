@@ -9,6 +9,21 @@ namespace PoC.VirtualManager.Interactions.Extensions
 {
     public static class JsonSerializerExtensions
     {
+        public static bool TryDeserialize<T>(this string json, out T result)
+        {
+            try
+            {
+                json = ExtractJson(json);
+                result = JsonSerializer.Deserialize<T>(json);
+                return true;
+            }
+            catch (JsonException)
+            {
+                result = default(T);
+                return false;
+            }
+        }
+
         public static bool TryDeserialize(this string json, Type type, out object result)
         {
             try

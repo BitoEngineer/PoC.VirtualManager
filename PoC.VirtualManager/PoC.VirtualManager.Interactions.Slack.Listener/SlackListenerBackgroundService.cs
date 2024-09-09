@@ -61,7 +61,10 @@ namespace PoC.VirtualManager.Interactions.Slack.Listener
             {
                 await foreach(var interaction in ConsumeLatestSlackInteractionsAsync(stoppingToken).WithCancellation(stoppingToken))
                 {
-                    await _interactionsChannel.Writer.WriteAsync(interaction, stoppingToken);
+                    if(interaction.ChannelName == "virtual-manager") //TODO remove
+                    {
+                        await _interactionsChannel.Writer.WriteAsync(interaction, stoppingToken);
+                    }
                 }
 
                 await Task.Delay(TimeSpan.FromSeconds(60));
@@ -76,18 +79,14 @@ namespace PoC.VirtualManager.Interactions.Slack.Listener
             {
                 foreach (var channel in allChannels.Conversations) //DMs and private channels not included, and not possible :(
                 {
-                    var channelsInteractions = await ProcessSlackChannelAsync(channel, stoppingToken);
+                    var channelsInteractionsQueueItem = await ProcessSlackChannelAsync(channel, stoppingToken);
                     
-                    if (string.IsNullOrEmpty(channelsInteractions))
+                    if (!channelsInteractionsQueueItem.Messages.Any())
                     {
                         continue;
                     }
 
-                    yield return new SlackInteractionsQueueItem
-                    {
-                        ChannelId = channel.Id,
-                        Message = channelsInteractions
-                    };
+                    yield return channelsInteractionsQueueItem;
                 }
             }
             else
@@ -96,7 +95,7 @@ namespace PoC.VirtualManager.Interactions.Slack.Listener
             }
         }
 
-        private async Task<string> ProcessSlackChannelAsync(Client.Models.Nested.Channel channel, CancellationToken stoppingToken)
+        private async Task<SlackInteractionsQueueItem> ProcessSlackChannelAsync(Client.Models.Nested.Channel channel, CancellationToken stoppingToken)
         {
             var from = DateTimeOffset.UtcNow.AddDays(-15); //TODO control checkpoint 
             var to = DateTimeOffset.UtcNow; //TODO control checkpoint
@@ -108,7 +107,7 @@ namespace PoC.VirtualManager.Interactions.Slack.Listener
 
             if (history.Ok)
             {
-                return await history.Messages.ToPlainTextInteractionsAsync(
+                return await history.Messages.ToSlackInteractionsQueueItemAsync(
                     from,
                     to,
                     _usersCache,
@@ -126,7 +125,7 @@ namespace PoC.VirtualManager.Interactions.Slack.Listener
             }
         }
 
-        private async Task<string> JoinChannelAndReprocessAsync(Client.Models.Nested.Channel channel, CancellationToken stoppingToken)
+        private async Task<SlackInteractionsQueueItem> JoinChannelAndReprocessAsync(Client.Models.Nested.Channel channel, CancellationToken stoppingToken)
         {
             var joinResponse = await _slackClient.JoinConversationAsync(channel.Id, stoppingToken);
 
@@ -140,7 +139,10 @@ namespace PoC.VirtualManager.Interactions.Slack.Listener
                 _logger.LogError("Could not join channel {ChannelId} due to {Error}", channel.Id, joinResponse.Error);
             }
 
-            return string.Empty;
+            return new SlackInteractionsQueueItem
+            {
+                Messages = new List<SlackMessage>()
+            };
         }
 
 

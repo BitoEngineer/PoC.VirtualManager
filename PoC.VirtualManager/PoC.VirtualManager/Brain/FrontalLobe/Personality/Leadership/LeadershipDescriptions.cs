@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PoC.VirtualManager.Personality.Leadership
+namespace PoC.VirtualManager.Brain.FrontalLobe.Personality.Leadership
 {
     public class LeadershipDescriptions
     {

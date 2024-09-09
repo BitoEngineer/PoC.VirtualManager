@@ -1,5 +1,6 @@
 ﻿using PoC.VirtualManager.Interactions.Slack.Client.Models;
 using PoC.VirtualManager.Interactions.Slack.Listener.Caches;
+using PoC.VirtualManager.Slack.Client.Models.Messaging;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -7,35 +8,31 @@ namespace PoC.VirtualManager.Interactions.Slack.Listener.Extensions
 {
     public static class SlackMessagesExtensions
     {
-        public static async Task<string> ToPlainTextInteractionsAsync(this List<ConversationMessage> messages,
+        public static async Task<SlackInteractionsQueueItem> ToSlackInteractionsQueueItemAsync(this List<ConversationMessage> messages,
             DateTimeOffset from,
             DateTimeOffset to,
             IUsersCache usersCache,
             Client.Models.Nested.Channel channel,
             CancellationToken stoppingToken)
         {
-            var stringBuilder = new StringBuilder();
-            stringBuilder.AppendLine($"Channel name: {channel.Name ?? "Undefined"}");
-            stringBuilder.AppendLine($"Channel purpose: {channel.Purpose?.Value ?? "Undefined"}");
-            stringBuilder.AppendLine($"Channel topic: {channel.Topic?.Value ?? "Undefined"}\n");
-
-            if (messages.Any())
+            return new SlackInteractionsQueueItem
             {
-                foreach (var message in messages)
+                ChannelId = channel.Id,
+                ChannelName = channel.Name,
+                ChannelPurpose = channel.Purpose?.Value,
+                ChannelTopic = channel.Topic?.Value,
+                Messages = (await Task.WhenAll(messages.Select(async message =>
                 {
                     var user = await usersCache.GetUserAsync(message.User, stoppingToken);
-
-                    stringBuilder.AppendLine($"From: {user.RealName} - {user.Profile.Email}");
-                    var messageText = await ReplaceAllUserIdsWithUserNames(message.Text, usersCache, stoppingToken);
-                    stringBuilder.AppendLine($"{DateTimeOffset.FromUnixTimeSeconds(long.Parse(message.Ts.Split(".")[0]))}: {messageText}\n");
-                }
-            }
-            else
-            {
-                stringBuilder.AppendLine($"No new messages from {from} to {to}");
-            }
-
-            return stringBuilder.ToString();
+                    return new SlackMessage
+                    {
+                        FromName = user.Name,
+                        FromEmail = user?.Profile?.Email,
+                        Timestamp = DateTimeOffset.FromUnixTimeSeconds(long.Parse(message.Ts.Split(".")[0])).DateTime,
+                        Message = await ReplaceAllUserIdsWithUserNames(message.Text, usersCache, stoppingToken)
+                    };
+                }))).ToList()
+            };
         }
 
         private static async Task<string> ReplaceAllUserIdsWithUserNames(

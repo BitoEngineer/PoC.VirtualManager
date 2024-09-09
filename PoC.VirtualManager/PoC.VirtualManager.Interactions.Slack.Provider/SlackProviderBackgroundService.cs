@@ -6,7 +6,7 @@ using PoC.VirtualManager.Slack.Client;
 using PoC.VirtualManager.Slack.Client.Models.Messaging;
 using System.Threading.Channels;
 
-namespace PoC.VirtualManager.Interactions.Slack.Provider
+namespace PoC.VirtualManager.Interactions.Slack.Broadcaster
 {
     public class SlackProviderBackgroundService : BackgroundService
     {
