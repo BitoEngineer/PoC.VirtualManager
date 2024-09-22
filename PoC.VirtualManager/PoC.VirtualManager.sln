@@ -57,7 +57,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Playgrou
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{175FF763-FA96-445A-9621-55855D2CBC8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoC.VirtualManager.Playground.Tests", "PoC.VirtualManager.Playground.Tests\PoC.VirtualManager.Playground.Tests.csproj", "{49625287-4481-4458-AEA9-713211AA4007}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Playground.Tests", "PoC.VirtualManager.Playground.Tests\PoC.VirtualManager.Playground.Tests.csproj", "{49625287-4481-4458-AEA9-713211AA4007}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.FineTuning", "PoC.VirtualManager.FineTuning\PoC.VirtualManager.FineTuning.csproj", "{50A1BF13-293B-4E48-9ECE-34DD6AFE183B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utils", "utils", "{B2009075-DA02-4DAD-B793-751F54C635BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoC.VirtualManager.Utils.MongoDb", "PoC.VirtualManager.Utils.MongoDb\PoC.VirtualManager.Utils.MongoDb.csproj", "{433D3F11-C076-43B2-89ED-BF85D09163C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -133,6 +139,14 @@ Global
 		{49625287-4481-4458-AEA9-713211AA4007}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49625287-4481-4458-AEA9-713211AA4007}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49625287-4481-4458-AEA9-713211AA4007}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50A1BF13-293B-4E48-9ECE-34DD6AFE183B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50A1BF13-293B-4E48-9ECE-34DD6AFE183B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50A1BF13-293B-4E48-9ECE-34DD6AFE183B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50A1BF13-293B-4E48-9ECE-34DD6AFE183B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{433D3F11-C076-43B2-89ED-BF85D09163C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{433D3F11-C076-43B2-89ED-BF85D09163C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{433D3F11-C076-43B2-89ED-BF85D09163C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{433D3F11-C076-43B2-89ED-BF85D09163C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -162,6 +176,7 @@ Global
 		{F993F3AF-0D8A-49F8-BEFC-93A382C9EB31} = {0F61BE25-40B5-4453-BD72-F8CF571F7177}
 		{175FF763-FA96-445A-9621-55855D2CBC8E} = {0F61BE25-40B5-4453-BD72-F8CF571F7177}
 		{49625287-4481-4458-AEA9-713211AA4007} = {175FF763-FA96-445A-9621-55855D2CBC8E}
+		{433D3F11-C076-43B2-89ED-BF85D09163C2} = {B2009075-DA02-4DAD-B793-751F54C635BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE73187D-7066-44CB-A088-C27CA58A1FD4}

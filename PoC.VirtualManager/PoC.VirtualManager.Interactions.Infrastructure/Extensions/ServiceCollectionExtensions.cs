@@ -11,7 +11,11 @@ namespace PoC.VirtualManager.Interactions.Infrastructure.Extensions
     {
         public static IServiceCollection AddInteractionsRepositories(this IServiceCollection services, string mongoDbConnectionString)
         {
-            services.AddSingleton<IInteractionsRepository, InteractionsRepository>(_ => new InteractionsRepository(mongoDbConnectionString));
+            var databaseName = "Interactions";
+
+            services.AddSingleton<IInteractionsMetadataRepository, InteractionsMetadataRepository>(
+                _ => new InteractionsMetadataRepository(databaseName, mongoDbConnectionString)
+            );
 
             return services;
         }

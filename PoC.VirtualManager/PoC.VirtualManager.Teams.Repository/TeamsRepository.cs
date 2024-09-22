@@ -17,8 +17,8 @@ namespace PoC.VirtualManager.Teams.Infrastructure
     }
 
     public class TeamsRepository : ITeamsRepository
-    {
-        private const string DatabaseName = "VirtualManager";
+    { //TODO refactor - use Utils.MongoDb
+        private const string DatabaseName = "Company";
         private const string TeamsCollectionName = "Teams";
         private const string TeamMembersCollectionName = "TeamMembers";
 

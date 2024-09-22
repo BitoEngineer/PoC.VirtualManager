@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using PoC.VirtualManager.Utils.MongoDb.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,19 +11,13 @@ using System.Threading.Tasks;
 
 namespace PoC.VirtualManager.Interactions.Models
 {
-    public class InteractionMetadata
+    public class InteractionMetadata : MongoDbEntity
     {
-        //Manual filled fields
-        [BsonElement("_id")]
-        [JsonPropertyName("_id")]
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
         public string TeamMemberEmail { get; set; }
         public string ChannelName { get; set; }
         public string ChannelId { get; set; }
         public string Text { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public InteractionSource Source { get; set; }
 
         //Hard skills
         [Description("Evaluation of technical expertise shown on the interaction, considering team member seniority.")]
@@ -44,10 +39,17 @@ namespace PoC.VirtualManager.Interactions.Models
         public string Conflict { get; set; }
 
         //Suggestions
-        [Description("TODO")]
+        [Description("Suggestions on soft skills. May be null if none.")]
         public string SoftSkillsSuggestions { get; set; }
-        [Description("TODO")]
+
+        [Description("Suggestions on hard skills (considering seniority level). May be null if none.")]
         public string HardSkillsSuggestions { get; set; }
+
+        [Description("Practical suggestions on how to handle the issue in a better way. May be null if none.")]
+        public string PracticalSuggestions { get; set; }
+
+        //Actions
+        //TODO - should be communicated to
     }
 
     public class SentimentResult

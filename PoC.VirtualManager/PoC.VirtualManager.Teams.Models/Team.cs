@@ -21,5 +21,7 @@ namespace PoC.VirtualManager.Teams.Client.Models
         public string DomainExpertise { get; set; }
         public string TechnicalExpertise { get; set; }
         public string Methodoly { get; set; }
+
+        //TODO add related entity with the Team goals and roadmap
     }
 }

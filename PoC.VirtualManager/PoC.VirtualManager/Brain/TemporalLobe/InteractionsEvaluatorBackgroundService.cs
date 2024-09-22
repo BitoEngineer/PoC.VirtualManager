@@ -27,7 +27,7 @@ namespace PoC.VirtualManager.Brain.TemporalLobe
         private readonly ILogger<SlackProcessorBackgroundService> _logger;
         private readonly Channel<SlackInteractionsQueueItem> _slackInteractionsChannel;
         private readonly TextAnalyticsClient _textAnalyticsClient;
-        private readonly IInteractionsRepository _interactionsRepository;
+        private readonly IInteractionsMetadataRepository _interactionsRepository;
         private readonly IChatCompletionService _chatCompletionService;
         private readonly Kernel _kernel;
         private readonly Personality _personality;
@@ -37,7 +37,7 @@ namespace PoC.VirtualManager.Brain.TemporalLobe
         public InteractionsEvaluatorBackgroundService(ILogger<SlackProcessorBackgroundService> logger, 
             [FromKeyedServices("slack-interactions-channel")] Channel<SlackInteractionsQueueItem> slackInteractionsChannel, 
             TextAnalyticsClient textAnalyticsClient,
-            IInteractionsRepository interactionsRepository,
+            IInteractionsMetadataRepository interactionsRepository,
             IChatCompletionService chatCompletionService,
             Personality personality,
             Kernel kernel)
@@ -173,6 +173,7 @@ namespace PoC.VirtualManager.Brain.TemporalLobe
             InteractionMetadata interactionMetadata,
             AnalyzeSentimentResult sentimentResult)
         {
+            interactionMetadata.Source = InteractionSource.Slack;
             interactionMetadata.Text = document.Text;
             interactionMetadata.ChannelId = interactions.ChannelId;
             interactionMetadata.ChannelName = interactions.ChannelName;

@@ -1,0 +1,71 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Dataset\CompanySpecific\CompanyEmployees.json" />
+    <None Remove="Dataset\CompanySpecific\CompanyOrganizationalChart.json" />
+    <None Remove="Dataset\CompanySpecific\CompanyValues.json" />
+    <None Remove="Dataset\CompanySpecific\CompanyVisionAndMission.json" />
+    <None Remove="Dataset\CompanySpecific\CompanyWoW.json" />
+    <None Remove="Dataset\VirtualManagerPersonality\ConflictResolution.json" />
+    <None Remove="Dataset\VirtualManagerPersonality\EmployeeDevelopment.json" />
+    <None Remove="Dataset\VirtualManagerPersonality\HumanInteractions.json" />
+    <None Remove="Dataset\VirtualManagerPersonality\Management.json" />
+    <None Remove="Dataset\VirtualManagerPersonality\OrganizationalTheoryAndBehavior.json" />
+    <None Remove="Dataset\VirtualManagerPersonality\Psychology.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Dataset\CompanySpecific\CompanyValues.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dataset\CompanySpecific\CompanyWoW.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dataset\VirtualManagerPersonality\EmployeeDevelopment.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dataset\VirtualManagerPersonality\HumanInteractions.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dataset\VirtualManagerPersonality\Psychology.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dataset\VirtualManagerPersonality\Management.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dataset\VirtualManagerPersonality\OrganizationalTheoryAndBehavior.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dataset\VirtualManagerPersonality\ConflictResolution.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dataset\VirtualManagerPersonality\LeadeshipStyle.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dataset\CompanySpecific\CompanyVisionAndMission.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dataset\CompanySpecific\CompanyEmployees.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dataset\CompanySpecific\CompanyOrganizationalChart.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PoC.VirtualManager.Utils.MongoDb\PoC.VirtualManager.Utils.MongoDb.csproj" />
+  </ItemGroup>
+
+</Project>
