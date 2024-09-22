@@ -74,8 +74,6 @@ namespace PoC.VirtualManager.Interactions.Slack.Listener.Tests
             var conversation = (allConversations)
                 .Conversations.OrderByDescending(x => x.Updated).First(x => x.IsIm);
 
-
-
             //Act
             foreach(var lala in allConversations.Conversations)
             {
@@ -84,17 +82,43 @@ namespace PoC.VirtualManager.Interactions.Slack.Listener.Tests
                 var to = DateTimeOffset.UtcNow;// DateTimeOffset.FromUnixTimeMilliseconds(lala.Updated);
                 var from = to.AddDays(-1);
                 var history = await client.GetConversationHistoryAsync(lala.Id, from, to, default);
-                /*
-                if (history.Contains("not_in_channel"))
-                {
-                    var yo = await client.JoinConversationAsync(lala.Id, default);
-                }
-                //If "{\"ok\":false,\"error\":\"not_in_channel\"}" - join the channel and try again
 
                 //Assert
-                history.Should().NotBeNull();*/
+                history.Should().NotBeNull();
             }
+        }
 
+        [TestMethod]
+        public async Task GetConversationInfoAsyncAsyncTest()
+        {
+            //Arrange
+            ISlackClient client = GetSlackClient();
+            var allConversations = await client.ListAllConversationsAsync(default(CancellationToken));
+            var conversation = (allConversations)
+                .Conversations.OrderByDescending(x => x.Updated).First(x => x.IsIm);
+
+            //Act
+            var conversationInfo = await client.GetConversationInfoAsync(conversation.Id, default);
+
+            //Assert
+            conversationInfo.Should().NotBeNull();
+        }
+
+        [TestMethod]
+        public async Task GetConversationMembersAsyncAsyncTest()
+        {
+            //Arrange
+            ISlackClient client = GetSlackClient();
+            var allConversations = await client.ListAllConversationsAsync(default(CancellationToken));
+            var conversation = (allConversations)
+                .Conversations.OrderByDescending(x => x.Updated).First(x => x.IsIm);
+
+            //Act
+            var members = await client.GetConversationMembersAsync(conversation.Id, default);
+
+            //Assert
+            members.Should().NotBeNull();
+            members.Members.Any().Should().BeTrue();
         }
 
         private static ISlackClient GetSlackClient()

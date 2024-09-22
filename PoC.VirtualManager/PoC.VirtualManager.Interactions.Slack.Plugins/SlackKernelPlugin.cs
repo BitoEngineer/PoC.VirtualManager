@@ -16,16 +16,21 @@ namespace PoC.VirtualManager.Interactions.Slack.Plugins
             _slackApiClient = slackApiClient;
         }
 
-        [KernelFunction("get_channel_info")]
-        [Description("Based on the channel id obtains all the Slack channel related info")]
+        [KernelFunction("get_channel_members")]
+        [Description("Based on the channel id obtains all the Slack channel members")]
         [return: Description("The channel info")]
-        public async Task<string> GetChannelInfo(string channelId)
+        public async Task<string> GetChannelMembers(string channelId)
         {
-            var getChannelInfoTask = _slackApiClient.GetConversationInfoAsync(channelId, default);
-            var getChannelMembersTask = _slackApiClient.GetConversationMembersAsync(channelId, default);
-            await Task.WhenAll(getChannelInfoTask, getChannelMembersTask);
-            //TODO filter only relevant info
-            return $"Channel Info: \n{getChannelInfoTask.Result}\nChannel Members: \n{getChannelMembersTask.Result}\n";
+            var getChannelMembers = await _slackApiClient.GetConversationMembersAsync(channelId, default);
+            var allUsersInfo = (await _slackApiClient.ListUsersAsync(default))
+                .Members
+                .ToDictionary(m => m.Id, m => m);
+
+            return string.Join("\n", getChannelMembers.Members.Select(id =>
+            {
+                var memberInfo = allUsersInfo[id];
+                return $"Id: {id} | Name: {memberInfo.Name} | Email: {memberInfo.Profile.Email} | Team: {memberInfo.Profile.Team} | Title: {memberInfo.Profile.Title} | Status: {memberInfo.Profile.StatusText}";
+            }));
         }
     }
 }

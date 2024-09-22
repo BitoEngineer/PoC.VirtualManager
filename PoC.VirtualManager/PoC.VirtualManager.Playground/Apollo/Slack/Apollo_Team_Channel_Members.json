@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "members": [
+    "marcoAgostinhoSlackId",
+    "fabioAnselmoSlackId",
+    "joaquimTapadasSlackId",
+    "tahiraVissaramSlackId",
+    "carlosRomanaSlackId",
+    "diogoVianaSlackId",
+    "rodrigoCorreiaSlackId"
+  ],
+  "response_metadata": { "next_cursor": "" }
+}

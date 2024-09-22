@@ -13,8 +13,8 @@ namespace PoC.VirtualManager.Interactions.Slack.Client
         Task<ListConversationsResponse> ListAllConversationsAsync(CancellationToken cancellationToken);
         Task<ListUsersConversationsResponse> ListUsersConversationsAsync(CancellationToken cancellationToken);
         Task<ListUsersResponse> ListUsersAsync(CancellationToken cancellationToken);
-        Task<string> GetConversationInfoAsync(string channelId, CancellationToken cancellationToken);
-        Task<string> GetConversationMembersAsync(string channelId, CancellationToken cancellationToken);
+        Task<ConversationInfoResponse> GetConversationInfoAsync(string channelId, CancellationToken cancellationToken);
+        Task<ConversationMembersResponse> GetConversationMembersAsync(string channelId, CancellationToken cancellationToken);
         Task<ConversationsHistoryResponse> GetConversationHistoryAsync(string conversationId,
             DateTimeOffset from,
             DateTimeOffset to,
@@ -70,7 +70,7 @@ namespace PoC.VirtualManager.Interactions.Slack.Client
             return JsonSerializer.Deserialize<ListConversationsResponse>(responseBodyJson);
         }
 
-        public async Task<string> GetConversationInfoAsync(string channelId, CancellationToken cancellationToken)
+        public async Task<ConversationInfoResponse> GetConversationInfoAsync(string channelId, CancellationToken cancellationToken)
         {
             var client = GetAuthenticatedClient();
             var queryParams = $"?channel={channelId}&include_num_members=true";
@@ -79,11 +79,10 @@ namespace PoC.VirtualManager.Interactions.Slack.Client
             response.EnsureSuccessStatusCode();
 
             var responseBodyJson = await response.Content.ReadAsStringAsync(cancellationToken);
-            return responseBodyJson;
-            //return JsonSerializer.Deserialize<ListChannelsResponse>(responseBodyJson);
+            return JsonSerializer.Deserialize<ConversationInfoResponse>(responseBodyJson);
         }
 
-        public async Task<string> GetConversationMembersAsync(string channelId, CancellationToken cancellationToken)
+        public async Task<ConversationMembersResponse> GetConversationMembersAsync(string channelId, CancellationToken cancellationToken)
         {
             var client = GetAuthenticatedClient();
             var queryParams = $"?channel={channelId}";
@@ -92,8 +91,7 @@ namespace PoC.VirtualManager.Interactions.Slack.Client
             response.EnsureSuccessStatusCode();
 
             var responseBodyJson = await response.Content.ReadAsStringAsync(cancellationToken);
-            return responseBodyJson;
-            //return JsonSerializer.Deserialize<ListChannelsResponse>(responseBodyJson);
+            return JsonSerializer.Deserialize<ConversationMembersResponse>(responseBodyJson);
         }
 
         public async Task<ListUsersConversationsResponse> ListUsersConversationsAsync(CancellationToken cancellationToken)

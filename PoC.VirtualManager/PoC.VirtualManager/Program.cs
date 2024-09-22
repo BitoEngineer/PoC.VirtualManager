@@ -36,6 +36,8 @@ IHost host = Host.CreateDefaultBuilder(args)
 
         AddInteractionsInfrastructure(services);
         //TODO Add Teams infrastructure
+        //TODO store secrets somewhere and fetch them here
+        //TODO metrics for Tokens consumed
 
         AddAIServicesWithPlugins(services);
         AddStreamWriterToFile(context, services);

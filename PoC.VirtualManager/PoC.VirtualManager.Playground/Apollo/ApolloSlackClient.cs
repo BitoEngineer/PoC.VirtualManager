@@ -1,5 +1,6 @@
 ﻿using PoC.VirtualManager.Interactions.Slack.Client;
 using PoC.VirtualManager.Interactions.Slack.Client.Models;
+using PoC.VirtualManager.Slack.Client.Models;
 using System.Text.Json;
 
 namespace PoC.VirtualManager.Playground.Apollo
@@ -30,18 +31,20 @@ namespace PoC.VirtualManager.Playground.Apollo
             );
         }
 
-        public Task<string> GetConversationInfoAsync(
+        public Task<ConversationInfoResponse> GetConversationInfoAsync(
             string channelId,
             CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }
 
-        public Task<string> GetConversationMembersAsync(
+        public async Task<ConversationMembersResponse> GetConversationMembersAsync(
             string channelId,
             CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return JsonSerializer.Deserialize<ConversationMembersResponse>(
+                await File.ReadAllTextAsync("./Apollo/Slack/Apollo_Team_Channel_Members.json")
+                );
         }
 
         public Task<JoinConversationResponse> JoinConversationAsync(
@@ -53,12 +56,16 @@ namespace PoC.VirtualManager.Playground.Apollo
 
         public async Task<ListConversationsResponse> ListAllConversationsAsync(CancellationToken cancellationToken)
         {
-            return JsonSerializer.Deserialize<ListConversationsResponse>(await File.ReadAllTextAsync("./Apollo/Slack/Apollo_Team_Channel.json"));
+            return JsonSerializer.Deserialize<ListConversationsResponse>(
+                await File.ReadAllTextAsync("./Apollo/Slack/Apollo_Team_Channel.json")
+                );
         }
 
         public async Task<ListUsersResponse> ListUsersAsync(CancellationToken cancellationToken)
         {
-            return JsonSerializer.Deserialize<ListUsersResponse>(await File.ReadAllTextAsync("./Apollo/Slack/Apollo_Slack_Users.json"));
+            return JsonSerializer.Deserialize<ListUsersResponse>(
+                await File.ReadAllTextAsync("./Apollo/Slack/Apollo_Slack_Users.json")
+                );
         }
 
         public Task<ListUsersConversationsResponse> ListUsersConversationsAsync(CancellationToken cancellationToken)

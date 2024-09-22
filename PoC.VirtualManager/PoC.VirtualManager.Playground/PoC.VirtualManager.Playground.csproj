@@ -14,6 +14,7 @@
     <None Remove="Apollo\Rodrigo_Correia.json" />
     <None Remove="Apollo\Slack\Apollo_Slack_Users.json" />
     <None Remove="Apollo\Slack\Apollo_Team_Channel.json" />
+    <None Remove="Apollo\Slack\Apollo_Team_Channel_Members.json" />
     <None Remove="Apollo\Slack\BLE_integration_conversation.json" />
     <None Remove="Apollo\TeamMembers\Carlos_Romana.json" />
     <None Remove="Apollo\TeamMembers\Joaquim_Tapadas.json" />
@@ -22,6 +23,9 @@
 
   <ItemGroup>
     <Content Include="Apollo\Slack\Apollo_Slack_Users.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Apollo\Slack\Apollo_Team_Channel_Members.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
