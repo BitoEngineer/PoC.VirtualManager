@@ -24,12 +24,12 @@ namespace PoC.VirtualManager.Plugins
             return await _teamsApiClient.GetTeamAsync(teamName);
         }
 
-        [KernelFunction("get_team_member_info")]
-        [Description("Provides information related to a team member, including personality traits score, background, etc")]
+        [KernelFunction("get_team_member_info_by_email")]
+        [Description("Based on the team member email, provides team member information, including personality traits score, background, etc")]
         [return: Description("Team member info")]
-        public async Task<TeamMember> GetTeamMemberInfo(string memberName)
+        public async Task<TeamMember> GetTeamMemberInfo(string memberEmail)
         {
-            return await _teamsApiClient.GetTeamMemberAsync(memberName);
+            return await _teamsApiClient.GetTeamMemberByEmailAsync(memberEmail);
         }
     }
 }

@@ -5,7 +5,7 @@ using PoC.VirtualManager.Interactions.Slack.Client.Models;
 using System.Net.Http;
 using PoC.VirtualManager.Slack.Client.Models;
 
-namespace PoC.VirtualManager.Slack.Client
+namespace PoC.VirtualManager.Interactions.Slack.Client
 {
     public interface ISlackClient
     {

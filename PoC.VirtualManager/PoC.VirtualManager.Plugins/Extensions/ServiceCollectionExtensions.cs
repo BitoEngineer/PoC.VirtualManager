@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using PoC.VirtualManager.Teams.Client.Stubs;
 using PoC.VirtualManager.Teams.Plugins;
 using System;
 using System.Collections.Generic;

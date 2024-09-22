@@ -1,0 +1,41 @@
+﻿{
+  "ok": true,
+  "channels": [
+    {
+      "id": "apolloTeamSlackId",
+      "name": "apollo-team",
+      "is_channel": true,
+      "is_group": false,
+      "is_im": false,
+      "created": 1695015200,
+      "updated": 1695015200,
+      "creator": "U01234567",
+      "is_archived": false,
+      "is_general": false,
+      "unlinked": 0,
+      "name_normalized": "apollo-team",
+      "is_shared": false,
+      "is_ext_shared": false,
+      "is_org_shared": false,
+      "pending_shared": [],
+      "is_pending_ext_shared": false,
+      "is_member": true,
+      "is_private": false,
+      "is_mpim": false,
+      "topic": {
+        "value": "Apollo Team channel for everything",
+        "creator": "marcoAgostinhoSlackId",
+        "last_set": 1695015200
+      },
+      "purpose": {
+        "value": "Discuss the Apollo project and its progress.",
+        "creator": "marcoAgostinhoSlackId",
+        "last_set": 1695015200
+      },
+      "previous_names": []
+    }
+  ],
+  "response_metadata": {
+    "warnings": []
+  }
+}

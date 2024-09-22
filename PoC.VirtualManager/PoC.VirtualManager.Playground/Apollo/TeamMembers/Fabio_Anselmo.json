@@ -1,0 +1,141 @@
+{
+  "Id": "fabioAnselmoId",
+  "CreatedAt": "2023-09-11T09:00:00Z",
+  "UpdatedAt": "2024-09-21T10:50:00Z",
+  "TeamId": "apolloTeamId",
+  "LineManagerId": "marcoAgostinhoId",
+  "TechLeadId": "nunoCardosoId",
+  "Name": "Fabio Anselmo",
+  "Role": "Backend Engineer & Backend Tech Lead",
+  "Email": "fabio.anselmo@frotcom.com",
+  "BirthDate": "1988-03-22T00:00:00Z",
+  "JoinDate": "2019-01-10T00:00:00Z",
+  "Seniority": "Senior",
+  "PersonalityTraitsScore": {
+    "Openness": 82,
+    "Intellect": 88,
+    "OpennessToExperience": 75,
+    "Volatility": 30,
+    "Withdrawal": 25,
+    "Neuroticism": 20,
+    "Assertiveness": 80,
+    "Enthusiasm": 70,
+    "Extraversion": 65,
+    "Orderliness": 85,
+    "Industriousness": 90,
+    "Conscientiousness": 88,
+    "Politeness": 76,
+    "Compassion": 72,
+    "Agreeableness": 80
+  },
+  "Background": {
+    "PersonalDetails": {
+      "FullName": "Fabio Anselmo",
+      "DateOfBirth": "1988-03-22T00:00:00Z",
+      "Gender": "Male",
+      "Nationality": "Brazilian",
+      "MaritalStatus": "Single",
+      "Address": "45 Code Lane, Porto, Portugal",
+      "ContactNumber": "+351 987654321",
+      "Email": "fabio.anselmo@frotcom.com"
+    },
+    "Family": {
+      "ParentsNames": "Carlos Anselmo, Clara Anselmo",
+      "Siblings": "1 Sister",
+      "ChildhoodEnvironment": "Grew up in Rio de Janeiro in a middle-class family.",
+      "SignificantChildhoodEvents": [ "Built his first computer at age 14", "Won a national hackathon at 18" ],
+      "RelationshipWithParents": "Good",
+      "RelationshipWithSiblings": "Close"
+    },
+    "Education": {
+      "EducationHistory": [
+        {
+          "InstitutionName": "Federal University of Rio de Janeiro",
+          "Degree": "Bachelor's in Computer Engineering",
+          "Major": "Software Development",
+          "StartDate": "2006-09-01T00:00:00Z",
+          "EndDate": "2010-07-01T00:00:00Z",
+          "GPA": 3.7
+        },
+        {
+          "InstitutionName": "Federal University of Rio de Janeiro",
+          "Degree": "Master's in Information Systems",
+          "Major": "Distributed Systems",
+          "StartDate": "2011-09-01T00:00:00Z",
+          "EndDate": "2013-07-01T00:00:00Z",
+          "GPA": 3.85
+        }
+      ],
+      "HighestDegree": "Master's in Information Systems",
+      "Major": "Distributed Systems",
+      "InstitutionsAttended": "Federal University of Rio de Janeiro"
+    },
+    "WorkHistory": {
+      "JobHistory": [
+        {
+          "JobTitle": "Junior Software Developer",
+          "CompanyName": "RioTech",
+          "StartDate": "2010-09-01T00:00:00Z",
+          "EndDate": "2013-08-01T00:00:00Z",
+          "Responsibilities": "Developed web applications using C# and SQL.",
+          "Achievements": "Increased database query performance by 25%."
+        },
+        {
+          "JobTitle": "Software Engineer",
+          "CompanyName": "GlobalSoft",
+          "StartDate": "2013-09-01T00:00:00Z",
+          "EndDate": "2017-12-01T00:00:00Z",
+          "Responsibilities": "Led backend development using .NET Core and Azure.",
+          "Achievements": "Migrated legacy systems to microservices architecture."
+        },
+        {
+          "JobTitle": "Senior Software Engineer",
+          "CompanyName": "InnovaCode",
+          "StartDate": "2018-01-01T00:00:00Z",
+          "EndDate": "2019-01-01T00:00:00Z",
+          "Responsibilities": "Architected high-availability distributed systems.",
+          "Achievements": "Developed a fault-tolerant microservices framework."
+        }
+      ],
+      "CurrentPosition": "Software Engineer & Tech Lead",
+      "CurrentEmployer": "Innovate Tech",
+      "DateJoined": "2019-01-10T00:00:00Z",
+      "ReasonForLeavingLastJob": "To take on a leadership role"
+    },
+    "SkillsCertifications": {
+      "TechnicalSkills": [ ".NET Core", "C#", "Azure", "Microservices", "Event-Driven Architecture", "DevOps" ],
+      "SoftSkills": [ "Leadership", "Collaboration", "Strategic Thinking", "Problem Solving" ],
+      "Certifications": [ "Microsoft Certified: Azure Solutions Architect Expert", "Scrum Master Certification" ],
+      "LanguagesSpoken": [ "Portuguese", "English" ]
+    },
+    "Health": {
+      "PhysicalHealthStatus": "Excellent",
+      "MentalHealthStatus": "Stable",
+      "KnownAllergies": [ "None" ],
+      "ChronicConditions": [ "None" ],
+      "ExerciseHabits": "Daily running and gym sessions",
+      "DietPreferences": "Balanced diet with high protein intake"
+    },
+    "Psychology": {
+      "PersonalityType": "ENTP",
+      "StressCopingMechanisms": [ "Exercise", "Video games" ],
+      "PastTraumas": [],
+      "GeneralOutlookOnLife": "Optimistic with a focus on growth",
+      "CommunicationStyle": "Engaging and collaborative"
+    },
+    "Hobbies": {
+      "Hobbies": [ "Running", "Gaming", "Building open-source projects" ],
+      "PersonalProjects": [ "Contributing to open-source .NET libraries" ],
+      "VolunteerActivities": [ "Teaching coding in local communities" ],
+      "FavoriteBooks": "Clean Code by Robert C. Martin",
+      "FavoriteMovies": "Inception"
+    },
+    "Social": {
+      "CloseFriends": [ "Pedro Costa", "Ana Pereira" ],
+      "SocialMediaPresence": "GitHub, LinkedIn",
+      "CommunityInvolvement": "Organizer of .NET meetups",
+      "RelationshipStatus": "Single",
+      "NetworkingGroups": [ ".NET User Group Porto", "Tech Leadership Circle" ]
+    }
+  }
+}

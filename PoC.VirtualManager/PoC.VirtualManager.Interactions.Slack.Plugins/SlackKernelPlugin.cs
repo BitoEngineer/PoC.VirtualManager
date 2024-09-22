@@ -1,4 +1,5 @@
 ﻿using Microsoft.SemanticKernel;
+using PoC.VirtualManager.Interactions.Slack.Client;
 using PoC.VirtualManager.Slack.Client;
 using System.ComponentModel;
 
@@ -23,6 +24,7 @@ namespace PoC.VirtualManager.Interactions.Slack.Plugins
             var getChannelInfoTask = _slackApiClient.GetConversationInfoAsync(channelId, default);
             var getChannelMembersTask = _slackApiClient.GetConversationMembersAsync(channelId, default);
             await Task.WhenAll(getChannelInfoTask, getChannelMembersTask);
+            //TODO filter only relevant info
             return $"Channel Info: \n{getChannelInfoTask.Result}\nChannel Members: \n{getChannelMembersTask.Result}\n";
         }
     }

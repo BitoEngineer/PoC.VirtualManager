@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using PoC.VirtualManager.Interactions.Slack.Client.Models;
-using PoC.VirtualManager.Slack.Client;
+using PoC.VirtualManager.Interactions.Slack.Client;
 
 namespace PoC.VirtualManager.Interactions.Slack.Listener.Caches
 {
@@ -15,6 +15,7 @@ namespace PoC.VirtualManager.Interactions.Slack.Listener.Caches
         private readonly ISlackClient _slackClient;
         private readonly ILogger<UsersCache> _logger;
         private readonly MemoryCache _cache;
+        private readonly SemaphoreSlim _loadSemaphore = new SemaphoreSlim(initialCount: 1);
 
         private readonly MemoryCacheEntryOptions _cacheEntryOptions = new MemoryCacheEntryOptions()
         {
@@ -37,10 +38,12 @@ namespace PoC.VirtualManager.Interactions.Slack.Listener.Caches
 
         public async Task<Member> GetUserAsync(string userId, CancellationToken cancellationToken)
         {
+            await _loadSemaphore.WaitAsync(cancellationToken);
             if (!_cache.TryGetValue(userId, out object member))
             {
                 member = await LoadCacheAsync(userId, cancellationToken);
             }
+            _loadSemaphore.Release();
 
             return member as Member;
         }
@@ -66,7 +69,7 @@ namespace PoC.VirtualManager.Interactions.Slack.Listener.Caches
                     }
                 });
 
-                if(!allMembers.Members.Any(m => m.Id == userId))
+                if (!allMembers.Members.Any(m => m.Id == userId))
                 {
                     _cache.Set(userId, member);
                 }

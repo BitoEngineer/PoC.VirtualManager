@@ -29,7 +29,6 @@ namespace PoC.VirtualManager.Interactions.Models
         public string TechnicalExpertise { get; set; } //must consider seniority
 
         //Soft skills
-        [Description("Sentiment analysis result.")]
         public SentimentResult Sentiment { get; set; }
 
         [Description("Emotion analysis.")]
@@ -53,22 +52,18 @@ namespace PoC.VirtualManager.Interactions.Models
 
     public class SentimentResult
     {
-        [Description("Overall evaluation of the sentiment shown in the interaction.")]
+        public string Opinion { get; set; }
         public string Sentiment { get; set; }
 
-        [Description("Confidence score based on the sentiment analysis result.")]
         public ConfidenceScore Score { get; set; }
     }
 
     public class ConfidenceScore
     {
-        [Description("Positive sentiment analysis score.")]
         public double Positive { get; set; }
 
-        [Description("Negative sentiment analysis score.")]
         public double Negative { get; set; }
 
-        [Description("Neutral sentiment analysis score.")]
         public double Neutral { get; set; }
     }
 }

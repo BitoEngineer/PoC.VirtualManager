@@ -1,13 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using PoC.VirtualManager.Slack.Client.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PoC.VirtualManager.Slack.Client.Extensions
+namespace PoC.VirtualManager.Interactions.Slack.Client.Extensions
 {
     public static class ServiceCollectionExtensions
     {

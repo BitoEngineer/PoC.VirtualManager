@@ -1,0 +1,118 @@
+﻿{
+    "ok": true,
+    "messages": [
+        {
+            "type": "message",
+            "user": "marcoAgostinhoSlackId",
+            "text": "Alright team, so we have this new challenge with integrating BLE sensors into our ingestion pipeline. Thoughts? 🍿",
+            "ts": "1695300000.000001"
+        },
+        {
+            "type": "message",
+            "user": "fabioAnselmoSlackId",
+            "text": "BLE sensors, huh? Finally something cool, like adding a nose to our ingestion system so it can smell all that sensor data. 😂",
+            "ts": "1695300100.000002"
+        },
+        {
+            "type": "message",
+            "user": "rodrigoCorreiaSlackId",
+            "text": "Wait, are we saying DaemonWorker will now have a nose?! 🤔 But seriously, what would the flow look like? We’ll need DaemonWorker to start reading these BLE sensor events from the Event Hub, right?",
+            "ts": "1695300200.000003"
+        },
+        {
+            "type": "message",
+            "user": "marcoAgostinhoSlackId",
+            "text": "Exactly. DaemonWorker will need an extra responsibility now. Once it picks up those BLE sensor events, we’ll need to store the data in CosmosDB, just like we do for the vehicle tracking data.",
+            "ts": "1695300300.000004"
+        },
+        {
+            "type": "message",
+            "user": "fabioAnselmoSlackId",
+            "text": "Sure, but CosmosDB could get messy with the BLE sensor data. Should we split the data into its own collection? Or are we overcomplicating this? 🤷‍♂️",
+            "ts": "1695300400.000005"
+        },
+        {
+            "type": "message",
+            "user": "rodrigoCorreiaSlackId",
+            "text": "I’m all for keeping things separate, especially if the BLE data is going to evolve independently. Plus, adding new fields to the tracking data collection sounds... painful. 😬",
+            "ts": "1695300500.000006"
+        },
+        {
+            "type": "message",
+            "user": "marcoAgostinhoSlackId",
+            "text": "Good call, Rodrigo. I think we should also keep this data separate to maintain a clean schema. Now, let’s talk about the Frotcom2006Dev database. We’ll need to add tables to store metadata related to BLE devices, right?",
+            "ts": "1695300600.000007"
+        },
+        {
+            "type": "message",
+            "user": "fabioAnselmoSlackId",
+            "text": "Yep, looks like we’ll need at least a new `BLEDevices` table in Frotcom2006Dev to store the device IDs and any configuration or metadata tied to each sensor. Also, we might need to update the `Vehicles` table with a relationship to these BLE devices. 🚗🔗🔧",
+            "ts": "1695300700.000008"
+        },
+        {
+            "type": "message",
+            "user": "rodrigoCorreiaSlackId",
+            "text": "Makes sense. And how about the Devices API? If the Kinder Maxi team already handles all device-related operations, we’ll need to coordinate with them. Could be fun. 😅",
+            "ts": "1695300800.000009"
+        },
+        {
+            "type": "message",
+            "user": "marcoAgostinhoSlackId",
+            "text": "Oh, definitely. 🎉 I’ll reach out to Kinder Maxi. But we’ll likely need to create new endpoints in their Devices API for BLE sensor data. They’ll hate us, but what’s new? 😏",
+            "ts": "1695300900.000010"
+        },
+        {
+            "type": "message",
+            "user": "fabioAnselmoSlackId",
+            "text": "LOL! Hopefully, it won’t be too bad. I’m imagining something like `POST /devices/ble` to add new sensors and maybe `GET /devices/{vehicleId}/ble` to fetch all the BLE devices tied to a vehicle. 🌐",
+            "ts": "1695301000.000011"
+        },
+        {
+            "type": "message",
+            "user": "rodrigoCorreiaSlackId",
+            "text": "That works for me! Should we handle BLE sensor failures the same way we do for other devices? Or do they get their own error codes? 🔧🤔",
+            "ts": "1695301100.000012"
+        },
+        {
+            "type": "message",
+            "user": "marcoAgostinhoSlackId",
+            "text": "Good question. Let’s keep it consistent with our current error-handling structure for now, but we can revisit that once we see how often BLE sensors misbehave. 🧐",
+            "ts": "1695301200.000013"
+        },
+        {
+            "type": "message",
+            "user": "fabioAnselmoSlackId",
+            "text": "Agreed. Alright, I’ll start looking into how to modify DaemonWorker to pick up BLE sensor events. And Rodrigo, you can begin working on the Frotcom2006Dev changes?",
+            "ts": "1695301300.000014"
+        },
+        {
+            "type": "message",
+            "user": "rodrigoCorreiaSlackId",
+            "text": "On it! Let’s make DaemonWorker smell better with those BLE sensor events. 😂",
+            "ts": "1695301400.000015"
+        },
+        {
+            "type": "message",
+            "user": "marcoAgostinhoSlackId",
+            "text": "Perfect. Let’s aim to have a first version ready by end of the week so we can start testing. 🚀",
+            "ts": "1695301500.000016"
+        },
+        {
+            "type": "message",
+            "user": "fabioAnselmoSlackId",
+            "text": "Challenge accepted. Let’s make this BLE-ing good! 😎",
+            "ts": "1695301600.000017"
+        },
+        {
+            "type": "message",
+            "user": "rodrigoCorreiaSlackId",
+            "text": "BLE-ing awesome, you mean. 😎",
+            "ts": "1695301700.000018"
+        }
+    ],
+    "has_more": false,
+    "pin_count": 0,
+    "response_metadata": {
+        "next_cursor": ""
+    }
+}

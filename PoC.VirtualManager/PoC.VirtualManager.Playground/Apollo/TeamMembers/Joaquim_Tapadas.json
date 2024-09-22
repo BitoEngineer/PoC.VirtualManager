@@ -1,0 +1,125 @@
+{
+  "Id": "joaquimTapadasId",
+  "CreatedAt": "2021-01-15T10:00:00Z",
+  "UpdatedAt": "2024-09-21T12:30:00Z",
+  "TeamId": "apolloTeamId",
+  "LineManagerId": "renatoFerreiraId",
+  "TechLeadId": null,
+  "Name": "Joaquim Tapadas",
+  "Role": "Product Owner",
+  "Email": "joaquim.tapadas@frotcom.com",
+  "BirthDate": "1974-07-20T00:00:00Z",
+  "JoinDate": "2021-01-15T00:00:00Z",
+  "Seniority": "Senior",
+  "PersonalityTraitsScore": {
+    "Openness": 40,
+    "Intellect": 80,
+    "OpennessToExperience": 30,
+    "Volatility": 85,
+    "Withdrawal": 25,
+    "Neuroticism": 70,
+    "Assertiveness": 95,
+    "Enthusiasm": 20,
+    "Extraversion": 70,
+    "Orderliness": 90,
+    "Industriousness": 95,
+    "Conscientiousness": 90,
+    "Politeness": 35,
+    "Compassion": 50,
+    "Agreeableness": 45
+  },
+  "Background": {
+    "PersonalDetails": {
+      "FullName": "Joaquim Tapadas",
+      "DateOfBirth": "1974-07-20T00:00:00Z",
+      "Gender": "Male",
+      "Nationality": "Portuguese",
+      "MaritalStatus": "Married",
+      "Address": "45 Strong St, Lisbon, Portugal",
+      "ContactNumber": "+351 914567890",
+      "Email": "joaquim.tapadas@frotcom.com"
+    },
+    "Family": {
+      "ParentsNames": "Manuel Tapadas, Maria Tapadas",
+      "Siblings": "Two brothers",
+      "ChildhoodEnvironment": "Strict, competitive",
+      "SignificantChildhoodEvents": [ "Excelled in school, strict father" ],
+      "RelationshipWithParents": "Respectful, but distant",
+      "RelationshipWithSiblings": "Competitive"
+    },
+    "Education": {
+      "EducationHistory": [
+        {
+          "InstitutionName": "University of Porto",
+          "Degree": "Master's in Business Administration",
+          "Major": "Product Management",
+          "StartDate": "1992-09-01T00:00:00Z",
+          "EndDate": "1996-06-01T00:00:00Z",
+          "GPA": 3.9
+        }
+      ],
+      "HighestDegree": "Master's in Business Administration",
+      "Major": "Product Management",
+      "InstitutionsAttended": "University of Porto"
+    },
+    "WorkHistory": {
+      "JobHistory": [
+        {
+          "JobTitle": "Project Manager",
+          "CompanyName": "Global Tech Solutions",
+          "StartDate": "1996-09-01T00:00:00Z",
+          "EndDate": "2005-08-01T00:00:00Z",
+          "Responsibilities": "Managed large-scale enterprise projects.",
+          "Achievements": "Delivered high-stakes projects on time and within budget."
+        },
+        {
+          "JobTitle": "Senior Product Manager",
+          "CompanyName": "Innovate Enterprises",
+          "StartDate": "2005-09-01T00:00:00Z",
+          "EndDate": "2020-12-01T00:00:00Z",
+          "Responsibilities": "Led product strategy and execution for global platforms.",
+          "Achievements": "Increased market share by 15% over 3 years."
+        }
+      ],
+      "CurrentPosition": "Product Owner",
+      "CurrentEmployer": "Innovate Tech",
+      "DateJoined": "2021-01-15T00:00:00Z",
+      "ReasonForLeavingLastJob": "Seeking more direct involvement with product teams"
+    },
+    "SkillsCertifications": {
+      "TechnicalSkills": [ "Product Management", "Agile Methodologies", "Team Leadership" ],
+      "SoftSkills": [ "Decision Making", "Conflict Resolution", "Strategic Thinking" ],
+      "Certifications": [ "Certified Scrum Product Owner (CSPO)" ],
+      "LanguagesSpoken": [ "Portuguese", "English", "Spanish" ]
+    },
+    "Health": {
+      "PhysicalHealthStatus": "Good",
+      "MentalHealthStatus": "Resilient but occasionally stressed",
+      "KnownAllergies": [ "Pollen" ],
+      "ChronicConditions": [ "None" ],
+      "ExerciseHabits": "Regular gym sessions",
+      "DietPreferences": "Balanced diet"
+    },
+    "Psychology": {
+      "PersonalityType": "ENTJ",
+      "StressCopingMechanisms": [ "Exercise", "Working through problems" ],
+      "PastTraumas": [ "Strict father, high expectations" ],
+      "GeneralOutlookOnLife": "Driven, focused, tough but caring",
+      "CommunicationStyle": "Direct, often harsh but goal-oriented"
+    },
+    "Hobbies": {
+      "Hobbies": [ "Playing chess", "Reading leadership books" ],
+      "PersonalProjects": [ "Building a product management coaching course" ],
+      "VolunteerActivities": [ "Mentoring young professionals" ],
+      "FavoriteBooks": "The Lean Product Playbook by Dan Olsen",
+      "FavoriteMovies": "Gladiator"
+    },
+    "Social": {
+      "CloseFriends": [ "Miguel Santos", "Rui Costa" ],
+      "SocialMediaPresence": "LinkedIn",
+      "CommunityInvolvement": "Frequent speaker at product management conferences",
+      "RelationshipStatus": "Married",
+      "NetworkingGroups": [ "Product Owners Alliance" ]
+    }
+  }
+}

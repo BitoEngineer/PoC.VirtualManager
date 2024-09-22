@@ -1,0 +1,125 @@
+{
+  "Id": "64f5e9a0b123f53eefaa6e2f",
+  "CreatedAt": "2022-10-15T10:00:00Z",
+  "UpdatedAt": "2024-09-21T12:00:00Z",
+  "TeamId": "apolloTeamId",
+  "LineManagerId": "marcoAgostinhoId",
+  "TechLeadId": "derecksonSantanaId",
+  "Name": "Carlos Romana",
+  "Role": "Frontend Engineer",
+  "Email": "carlos.romana@frotcom.com",
+  "BirthDate": "1992-08-14T00:00:00Z",
+  "JoinDate": "2022-10-15T00:00:00Z",
+  "Seniority": "Mid-Level",
+  "PersonalityTraitsScore": {
+    "Openness": 55,
+    "Intellect": 75,
+    "OpennessToExperience": 40,
+    "Volatility": 30,
+    "Withdrawal": 75,
+    "Neuroticism": 50,
+    "Assertiveness": 40,
+    "Enthusiasm": 30,
+    "Extraversion": 35,
+    "Orderliness": 70,
+    "Industriousness": 85,
+    "Conscientiousness": 80,
+    "Politeness": 70,
+    "Compassion": 60,
+    "Agreeableness": 65
+  },
+  "Background": {
+    "PersonalDetails": {
+      "FullName": "Carlos Romana",
+      "DateOfBirth": "1992-08-14T00:00:00Z",
+      "Gender": "Male",
+      "Nationality": "Portuguese",
+      "MaritalStatus": "Single",
+      "Address": "12 Quiet St, Porto, Portugal",
+      "ContactNumber": "+351 927654321",
+      "Email": "carlos.romana@frotcom.com"
+    },
+    "Family": {
+      "ParentsNames": "Miguel Romana, Sofia Romana",
+      "Siblings": "None",
+      "ChildhoodEnvironment": "Quiet and disciplined upbringing",
+      "SignificantChildhoodEvents": [ "Focused on academics, little social interaction" ],
+      "RelationshipWithParents": "Cordial",
+      "RelationshipWithSiblings": "N/A"
+    },
+    "Education": {
+      "EducationHistory": [
+        {
+          "InstitutionName": "University of Lisbon",
+          "Degree": "Bachelor's in Computer Science",
+          "Major": "Frontend Development",
+          "StartDate": "2010-09-01T00:00:00Z",
+          "EndDate": "2014-06-01T00:00:00Z",
+          "GPA": 3.7
+        }
+      ],
+      "HighestDegree": "Bachelor's in Computer Science",
+      "Major": "Frontend Development",
+      "InstitutionsAttended": "University of Lisbon"
+    },
+    "WorkHistory": {
+      "JobHistory": [
+        {
+          "JobTitle": "Junior Frontend Developer",
+          "CompanyName": "Web Innovators",
+          "StartDate": "2014-09-01T00:00:00Z",
+          "EndDate": "2017-08-01T00:00:00Z",
+          "Responsibilities": "Built responsive and accessible web applications.",
+          "Achievements": "Improved page load times by 20%."
+        },
+        {
+          "JobTitle": "Frontend Engineer",
+          "CompanyName": "TechNest",
+          "StartDate": "2017-09-01T00:00:00Z",
+          "EndDate": "2022-10-01T00:00:00Z",
+          "Responsibilities": "Led development of frontend for a large SaaS platform.",
+          "Achievements": "Reduced frontend bugs by 30% through testing strategies."
+        }
+      ],
+      "CurrentPosition": "Frontend Engineer",
+      "CurrentEmployer": "Innovate Tech",
+      "DateJoined": "2022-10-15T00:00:00Z",
+      "ReasonForLeavingLastJob": "Seeking a more structured development process"
+    },
+    "SkillsCertifications": {
+      "TechnicalSkills": [ "Vue.js", "Node.js", "JavaScript", "CSS", "HTML" ],
+      "SoftSkills": [ "Attention to Detail", "Problem Solving", "Time Management" ],
+      "Certifications": [ "Certified Vue.js Developer" ],
+      "LanguagesSpoken": [ "Portuguese", "English" ]
+    },
+    "Health": {
+      "PhysicalHealthStatus": "Good",
+      "MentalHealthStatus": "Introverted, prefers solitude for focus",
+      "KnownAllergies": [ "None" ],
+      "ChronicConditions": [ "None" ],
+      "ExerciseHabits": "Occasional jogging",
+      "DietPreferences": "Simple, prefers home-cooked meals"
+    },
+    "Psychology": {
+      "PersonalityType": "ISTJ",
+      "StressCopingMechanisms": [ "Quiet reflection", "Listening to music" ],
+      "PastTraumas": [],
+      "GeneralOutlookOnLife": "Quiet, introspective, values professionalism",
+      "CommunicationStyle": "Reserved, professional"
+    },
+    "Hobbies": {
+      "Hobbies": [ "Reading technical blogs", "Solving programming challenges" ],
+      "PersonalProjects": [ "Building a static site generator" ],
+      "VolunteerActivities": [],
+      "FavoriteBooks": "You Don’t Know JS by Kyle Simpson",
+      "FavoriteMovies": "The Matrix"
+    },
+    "Social": {
+      "CloseFriends": [ "João Mendes", "Ricardo Santos" ],
+      "SocialMediaPresence": "GitHub",
+      "CommunityInvolvement": "Occasionally attends frontend developer meetups",
+      "RelationshipStatus": "Single",
+      "NetworkingGroups": [ "Node.js Developer Group" ]
+    }
+  }
+}

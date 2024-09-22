@@ -1,0 +1,86 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Apollo\Apollo.json" />
+    <None Remove="Apollo\Diogo_Viana.json" />
+    <None Remove="Apollo\Fabio_Anselmo.json" />
+    <None Remove="Apollo\Marco_Agostinho.json" />
+    <None Remove="Apollo\PersonalityTraits.json" />
+    <None Remove="Apollo\Rodrigo_Correia.json" />
+    <None Remove="Apollo\Slack\Apollo_Slack_Users.json" />
+    <None Remove="Apollo\Slack\Apollo_Team_Channel.json" />
+    <None Remove="Apollo\Slack\BLE_integration_conversation.json" />
+    <None Remove="Apollo\TeamMembers\Carlos_Romana.json" />
+    <None Remove="Apollo\TeamMembers\Joaquim_Tapadas.json" />
+    <None Remove="Apollo\TeamMembers\Tahira_Vissaram.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Apollo\Slack\Apollo_Slack_Users.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Apollo\Slack\Interactions\Technical\BLE_integration_conversation.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Apollo\Slack\Apollo_Team_Channel.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Apollo\Apollo.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Apollo\PersonalityTraits.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Apollo\TeamMembers\Carlos_Romana.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Apollo\TeamMembers\Diogo_Viana.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Apollo\TeamMembers\Fabio_Anselmo.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Apollo\TeamMembers\Joaquim_Tapadas.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Apollo\TeamMembers\Marco_Agostinho.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Apollo\TeamMembers\Rodrigo_Correia.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Apollo\TeamMembers\Tahira_Vissaram.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PoC.VirtualManager.Slack.Client\PoC.VirtualManager.Slack.Client.csproj" />
+    <ProjectReference Include="..\PoC.VirtualManager.TeamsAPI.Client\PoC.VirtualManager.Teams.Client.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Apollo\Slack\Interactions\CrossTeamCollaboration\" />
+    <Folder Include="Apollo\Slack\Interactions\Roadmap\" />
+    <Folder Include="Apollo\Slack\Interactions\Relaxed\" />
+  </ItemGroup>
+
+</Project>

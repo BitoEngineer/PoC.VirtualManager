@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using PoC.VirtualManager.Interactions.Slack.Client.Models.Nested;
-using PoC.VirtualManager.Slack.Client;
+using PoC.VirtualManager.Interactions.Slack.Client;
 using PoC.VirtualManager.Slack.Client.Models.Messaging;
 using System.Threading.Channels;
 

@@ -1,0 +1,125 @@
+{
+  "Id": "rodrigoCorreiaId",
+  "CreatedAt": "2024-03-15T09:00:00Z",
+  "UpdatedAt": "2024-09-21T11:20:00Z",
+  "TeamId": "apolloTeamId",
+  "LineManagerId": "marcoAgostinhoId",
+  "TechLeadId": "fabioAnselmoId",
+  "Name": "Rodrigo Correia",
+  "Role": "Junior Backend Engineer",
+  "Email": "rodrigo.correia@frotcom.com",
+  "BirthDate": "1997-11-12T00:00:00Z",
+  "JoinDate": "2023-03-15T00:00:00Z",
+  "Seniority": "Junior",
+  "PersonalityTraitsScore": {
+    "Openness": 75,
+    "Intellect": 80,
+    "OpennessToExperience": 70,
+    "Volatility": 45,
+    "Withdrawal": 35,
+    "Neuroticism": 40,
+    "Assertiveness": 60,
+    "Enthusiasm": 65,
+    "Extraversion": 60,
+    "Orderliness": 75,
+    "Industriousness": 85,
+    "Conscientiousness": 78,
+    "Politeness": 72,
+    "Compassion": 68,
+    "Agreeableness": 75
+  },
+  "Background": {
+    "PersonalDetails": {
+      "FullName": "Rodrigo Correia",
+      "DateOfBirth": "1997-11-12T00:00:00Z",
+      "Gender": "Male",
+      "Nationality": "Portuguese",
+      "MaritalStatus": "Single",
+      "Address": "23 Developer St, Lisbon, Portugal",
+      "ContactNumber": "+351 912345678",
+      "Email": "rodrigo.correia@frotcom.com"
+    },
+    "Family": {
+      "ParentsNames": "João Correia, Maria Correia",
+      "Siblings": "1 Brother",
+      "ChildhoodEnvironment": "Grew up in a tech-savvy household with supportive parents.",
+      "SignificantChildhoodEvents": [ "Built his first website at age 16", "Internship in software development at 19" ],
+      "RelationshipWithParents": "Supportive",
+      "RelationshipWithSiblings": "Close"
+    },
+    "Education": {
+      "EducationHistory": [
+        {
+          "InstitutionName": "University of Lisbon",
+          "Degree": "Bachelor's in Computer Science",
+          "Major": "Software Development",
+          "StartDate": "2016-09-01T00:00:00Z",
+          "EndDate": "2020-07-01T00:00:00Z",
+          "GPA": 3.5
+        }
+      ],
+      "HighestDegree": "Bachelor's in Computer Science",
+      "Major": "Software Development",
+      "InstitutionsAttended": "University of Lisbon"
+    },
+    "WorkHistory": {
+      "JobHistory": [
+        {
+          "JobTitle": "Intern Software Developer",
+          "CompanyName": "TechStart",
+          "StartDate": "2020-09-01T00:00:00Z",
+          "EndDate": "2021-12-01T00:00:00Z",
+          "Responsibilities": "Assisted in developing backend APIs using .NET Core.",
+          "Achievements": "Contributed to the successful deployment of internal tools."
+        },
+        {
+          "JobTitle": "Junior Software Engineer",
+          "CompanyName": "DevSolutions",
+          "StartDate": "2022-01-01T00:00:00Z",
+          "EndDate": "2023-03-01T00:00:00Z",
+          "Responsibilities": "Worked on .NET Core applications and collaborated on team projects.",
+          "Achievements": "Reduced API response times by optimizing queries."
+        }
+      ],
+      "CurrentPosition": "Junior Software Engineer",
+      "CurrentEmployer": "Innovate Tech",
+      "DateJoined": "2023-03-15T00:00:00Z",
+      "ReasonForLeavingLastJob": "To gain experience in a larger team"
+    },
+    "SkillsCertifications": {
+      "TechnicalSkills": [ ".NET Core", "C#", "SQL", "RESTful APIs", "Unit Testing" ],
+      "SoftSkills": [ "Problem Solving", "Communication", "Teamwork" ],
+      "Certifications": [ "Microsoft Certified: Azure Fundamentals" ],
+      "LanguagesSpoken": [ "Portuguese", "English" ]
+    },
+    "Health": {
+      "PhysicalHealthStatus": "Good",
+      "MentalHealthStatus": "Stable",
+      "KnownAllergies": [ "Peanuts" ],
+      "ChronicConditions": [ "None" ],
+      "ExerciseHabits": "Occasional running and hiking",
+      "DietPreferences": "Healthy, avoids processed foods"
+    },
+    "Psychology": {
+      "PersonalityType": "INFP",
+      "StressCopingMechanisms": [ "Reading", "Long walks" ],
+      "PastTraumas": [],
+      "GeneralOutlookOnLife": "Calm and reflective",
+      "CommunicationStyle": "Reserved but open when comfortable"
+    },
+    "Hobbies": {
+      "Hobbies": [ "Coding personal projects", "Reading science fiction" ],
+      "PersonalProjects": [ "Developing an open-source task manager app" ],
+      "VolunteerActivities": [ "Mentoring high school students in coding" ],
+      "FavoriteBooks": "The Pragmatic Programmer by Andrew Hunt and David Thomas",
+      "FavoriteMovies": "The Matrix"
+    },
+    "Social": {
+      "CloseFriends": [ "Miguel Santos", "Laura Sousa" ],
+      "SocialMediaPresence": "GitHub, LinkedIn",
+      "CommunityInvolvement": "Member of Lisbon Developers Group",
+      "RelationshipStatus": "Single",
+      "NetworkingGroups": [ "Lisbon Dev Community", "Azure User Group Portugal" ]
+    }
+  }
+}

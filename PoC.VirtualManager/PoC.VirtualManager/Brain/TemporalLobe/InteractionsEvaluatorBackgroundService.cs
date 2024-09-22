@@ -105,13 +105,12 @@ namespace PoC.VirtualManager.Brain.TemporalLobe
                 var document = documents.FirstOrDefault(d => d.Id == review.Id);
                 var message = interactions.Messages.FirstOrDefault(m => document.Text.Contains(m.Message));
 
-                _logger.LogInformation($"Document: {JsonSerializer.Serialize(document)}\nSentiment analysis: {JsonSerializer.Serialize(review)}");
+                _logger.LogInformation($"Document: \n{JsonSerializer.Serialize(document)}\nSentiment analysis: \n{JsonSerializer.Serialize(review)}");
 
                 var chatHistory = GetOrCreateChatHistory(interactions);
 
                 var promptWithInteractionAndReview =
-                    $@"Interaction: {JsonSerializer.Serialize(message)} \n
-                       Sentiment analysis: {JsonSerializer.Serialize(review)}";
+                    $@"Interaction: {JsonSerializer.Serialize(message)}";
 
                 chatHistory.AddUserMessage(promptWithInteractionAndReview);
                 var interactionMetadataJson = (await _chatCompletionService.GetChatMessageContentAsync(
@@ -133,7 +132,7 @@ namespace PoC.VirtualManager.Brain.TemporalLobe
                     throw new Exception(errorMessage);
                 }
 
-                EnrichInteractionMetadata(interactions, document, message, interactionMetadata);
+                EnrichInteractionMetadata(interactions, document, message, interactionMetadata, review);
                 await _interactionsRepository.InsertAsync(interactionMetadata, cancellationToken);
             }
         }
@@ -167,12 +166,28 @@ namespace PoC.VirtualManager.Brain.TemporalLobe
             return chatHistory;
         }
 
-        private static void EnrichInteractionMetadata(SlackInteractionsQueueItem interactions, TextDocumentInput document, SlackMessage message, InteractionMetadata interactionMetadata)
+        private static void EnrichInteractionMetadata(
+            SlackInteractionsQueueItem interactions, 
+            TextDocumentInput document, 
+            SlackMessage message, 
+            InteractionMetadata interactionMetadata,
+            AnalyzeSentimentResult sentimentResult)
         {
             interactionMetadata.Text = document.Text;
             interactionMetadata.ChannelId = interactions.ChannelId;
             interactionMetadata.ChannelName = interactions.ChannelName;
             interactionMetadata.TeamMemberEmail = message.FromEmail;
+            interactionMetadata.Sentiment = new SentimentResult
+            {
+                Score = new ConfidenceScore
+                {
+                    Negative = sentimentResult.DocumentSentiment.ConfidenceScores.Negative,
+                    Positive = sentimentResult.DocumentSentiment.ConfidenceScores.Positive,
+                    Neutral = sentimentResult.DocumentSentiment.ConfidenceScores.Neutral,
+                },
+                Sentiment = sentimentResult.DocumentSentiment.Sentiment.ToString(),
+                Opinion = string.Join(". ", sentimentResult.DocumentSentiment.Sentences.SelectMany(s => s.Opinions))
+            };
         }
     }
 }

@@ -1,0 +1,141 @@
+{
+  "Id": "marcoAgostinhoId",
+  "CreatedAt": "2023-09-10T08:30:00Z",
+  "UpdatedAt": "2024-09-21T10:45:00Z",
+  "TeamId": "apolloTeamId",
+  "LineManagerId": "jorgeMoreiraId",
+  "TechLeadId": "fabioAnselmoId",
+  "Name": "Marco Agostinho",
+  "Role": "Backend Engineer & Team Leader",
+  "Email": "marco.agostinho@frotcom.com",
+  "BirthDate": "1986-07-15T00:00:00Z",
+  "JoinDate": "2018-03-20T00:00:00Z",
+  "Seniority": "Senior",
+  "PersonalityTraitsScore": {
+    "Openness": 85,
+    "Intellect": 90,
+    "OpennessToExperience": 80,
+    "Volatility": 35,
+    "Withdrawal": 20,
+    "Neuroticism": 25,
+    "Assertiveness": 85,
+    "Enthusiasm": 75,
+    "Extraversion": 70,
+    "Orderliness": 88,
+    "Industriousness": 92,
+    "Conscientiousness": 90,
+    "Politeness": 80,
+    "Compassion": 78,
+    "Agreeableness": 82
+  },
+  "Background": {
+    "PersonalDetails": {
+      "FullName": "Marco Agostinho",
+      "DateOfBirth": "1986-07-15T00:00:00Z",
+      "Gender": "Male",
+      "Nationality": "Portuguese",
+      "MaritalStatus": "Married",
+      "Address": "123 Tech Street, Lisbon, Portugal",
+      "ContactNumber": "+351 912345678",
+      "Email": "marco.agostinho@frotcom.com"
+    },
+    "Family": {
+      "ParentsNames": "Antonio Agostinho, Maria Agostinho",
+      "Siblings": "1 Brother",
+      "ChildhoodEnvironment": "Grew up in Lisbon in a tech-savvy family.",
+      "SignificantChildhoodEvents": [ "Started coding at age 12", "Won local coding competition at age 17" ],
+      "RelationshipWithParents": "Very good",
+      "RelationshipWithSiblings": "Close"
+    },
+    "Education": {
+      "EducationHistory": [
+        {
+          "InstitutionName": "University of Lisbon",
+          "Degree": "Bachelor's in Computer Science",
+          "Major": "Software Engineering",
+          "StartDate": "2004-09-01T00:00:00Z",
+          "EndDate": "2008-07-01T00:00:00Z",
+          "GPA": 3.8
+        },
+        {
+          "InstitutionName": "University of Lisbon",
+          "Degree": "Master's in Computer Science",
+          "Major": "Software Development",
+          "StartDate": "2009-09-01T00:00:00Z",
+          "EndDate": "2011-07-01T00:00:00Z",
+          "GPA": 3.9
+        }
+      ],
+      "HighestDegree": "Master's in Computer Science",
+      "Major": "Software Development",
+      "InstitutionsAttended": "University of Lisbon"
+    },
+    "WorkHistory": {
+      "JobHistory": [
+        {
+          "JobTitle": "Junior Software Developer",
+          "CompanyName": "TechStart Solutions",
+          "StartDate": "2008-09-01T00:00:00Z",
+          "EndDate": "2011-08-01T00:00:00Z",
+          "Responsibilities": "Developed backend services in C# for web applications.",
+          "Achievements": "Optimized code performance by 15% in legacy systems."
+        },
+        {
+          "JobTitle": "Mid-Level Software Engineer",
+          "CompanyName": "Innovate IT",
+          "StartDate": "2011-09-01T00:00:00Z",
+          "EndDate": "2015-12-01T00:00:00Z",
+          "Responsibilities": "Led team projects and implemented cloud solutions using Azure and .NET.",
+          "Achievements": "Reduced project lead time by 20% with optimized workflows."
+        },
+        {
+          "JobTitle": "Senior Software Engineer",
+          "CompanyName": "NextGen Software",
+          "StartDate": "2016-01-01T00:00:00Z",
+          "EndDate": "2018-03-01T00:00:00Z",
+          "Responsibilities": "Architected and developed microservices using .NET Core.",
+          "Achievements": "Key contributor to a 50% increase in system scalability."
+        }
+      ],
+      "CurrentPosition": "Software Engineer & Team Leader",
+      "CurrentEmployer": "Innovate Tech",
+      "DateJoined": "2018-03-20T00:00:00Z",
+      "ReasonForLeavingLastJob": "Career progression"
+    },
+    "SkillsCertifications": {
+      "TechnicalSkills": [ ".NET Core", "C#", "Azure", "Microservices", "Docker", "Kubernetes" ],
+      "SoftSkills": [ "Leadership", "Mentoring", "Communication", "Problem Solving" ],
+      "Certifications": [ "Microsoft Certified: Azure Developer Associate", "Scrum Master Certification" ],
+      "LanguagesSpoken": [ "English", "Portuguese" ]
+    },
+    "Health": {
+      "PhysicalHealthStatus": "Good",
+      "MentalHealthStatus": "Stable",
+      "KnownAllergies": [ "Pollen" ],
+      "ChronicConditions": [ "None" ],
+      "ExerciseHabits": "Regular gym sessions 3 times a week",
+      "DietPreferences": "Balanced diet with occasional cheat meals"
+    },
+    "Psychology": {
+      "PersonalityType": "INTJ",
+      "StressCopingMechanisms": [ "Meditation", "Walking" ],
+      "PastTraumas": [],
+      "GeneralOutlookOnLife": "Optimistic with realistic expectations",
+      "CommunicationStyle": "Direct but respectful"
+    },
+    "Hobbies": {
+      "Hobbies": [ "Cycling", "Coding personal projects", "Reading Sci-Fi novels" ],
+      "PersonalProjects": [ "Developing a side project using Blazor" ],
+      "VolunteerActivities": [ "Teaching coding to underprivileged students" ],
+      "FavoriteBooks": "Dune by Frank Herbert",
+      "FavoriteMovies": "The Matrix"
+    },
+    "Social": {
+      "CloseFriends": [ "John Doe", "Maria Silva" ],
+      "SocialMediaPresence": "LinkedIn, GitHub",
+      "CommunityInvolvement": "Active in local tech meetups",
+      "RelationshipStatus": "Married",
+      "NetworkingGroups": [ ".NET User Group Lisbon", "Azure Cloud Community" ]
+    }
+  }
+}

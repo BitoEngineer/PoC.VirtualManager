@@ -1,7 +1,8 @@
 using Microsoft.Extensions.DependencyInjection;
-using PoC.VirtualManager.Slack.Client.Extensions;
+using PoC.VirtualManager.Interactions.Slack.Client.Extensions;
 using FluentAssertions;
 using PoC.VirtualManager.Slack.Client;
+using PoC.VirtualManager.Interactions.Slack.Client;
 
 namespace PoC.VirtualManager.Interactions.Slack.Listener.Tests
 {

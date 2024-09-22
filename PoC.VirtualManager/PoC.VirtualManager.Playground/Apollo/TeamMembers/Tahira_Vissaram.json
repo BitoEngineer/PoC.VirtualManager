@@ -1,0 +1,125 @@
+{
+  "Id": "tahiraVissaramId",
+  "CreatedAt": "2021-02-01T10:00:00Z",
+  "UpdatedAt": "2024-09-21T13:00:00Z",
+  "TeamId": "team-001",
+  "LineManagerId": "marcoAgostinhoId",
+  "TechLeadId": "sandnerId",
+  "Name": "Tahira Vissaram",
+  "Role": "Manual QA",
+  "Email": "tahira.vissaram@frotcom.com",
+  "BirthDate": "1990-05-10T00:00:00Z",
+  "JoinDate": "2021-02-01T00:00:00Z",
+  "Seniority": "Junior",
+  "PersonalityTraitsScore": {
+    "Openness": 20,
+    "Intellect": 35,
+    "OpennessToExperience": 25,
+    "Volatility": 70,
+    "Withdrawal": 65,
+    "Neuroticism": 60,
+    "Assertiveness": 40,
+    "Enthusiasm": 15,
+    "Extraversion": 30,
+    "Orderliness": 20,
+    "Industriousness": 35,
+    "Conscientiousness": 25,
+    "Politeness": 45,
+    "Compassion": 30,
+    "Agreeableness": 50
+  },
+  "Background": {
+    "PersonalDetails": {
+      "FullName": "Tahira Vissaram",
+      "DateOfBirth": "1990-05-10T00:00:00Z",
+      "Gender": "Female",
+      "Nationality": "Mauritian",
+      "MaritalStatus": "Single",
+      "Address": "12 Unknown St, Port Louis, Mauritius",
+      "ContactNumber": "+230 91234567",
+      "Email": "tahira.vissaram@frotcom.com"
+    },
+    "Family": {
+      "ParentsNames": "N/A",
+      "Siblings": "N/A",
+      "ChildhoodEnvironment": "Average, modest upbringing",
+      "SignificantChildhoodEvents": [ "N/A" ],
+      "RelationshipWithParents": "Neutral",
+      "RelationshipWithSiblings": "N/A"
+    },
+    "Education": {
+      "EducationHistory": [
+        {
+          "InstitutionName": "Local Community College",
+          "Degree": "Diploma in Business Administration",
+          "Major": "General",
+          "StartDate": "2009-09-01T00:00:00Z",
+          "EndDate": "2012-06-01T00:00:00Z",
+          "GPA": 2.5
+        }
+      ],
+      "HighestDegree": "Diploma",
+      "Major": "Business Administration",
+      "InstitutionsAttended": "Local Community College"
+    },
+    "WorkHistory": {
+      "JobHistory": [
+        {
+          "JobTitle": "Administrative Assistant",
+          "CompanyName": "Small Services Inc.",
+          "StartDate": "2013-09-01T00:00:00Z",
+          "EndDate": "2018-08-01T00:00:00Z",
+          "Responsibilities": "Filing documents, assisting staff with administrative tasks.",
+          "Achievements": "Kept things running smoothly, but no standout achievements."
+        },
+        {
+          "JobTitle": "Junior QA",
+          "CompanyName": "BasicTech Corp",
+          "StartDate": "2019-02-01T00:00:00Z",
+          "EndDate": "2020-12-01T00:00:00Z",
+          "Responsibilities": "Performed manual testing, reported issues, tracked bug tickets.",
+          "Achievements": "Minimal, no significant technical progress."
+        }
+      ],
+      "CurrentPosition": "Manual QA",
+      "CurrentEmployer": "Innovate Tech",
+      "DateJoined": "2021-02-01T00:00:00Z",
+      "ReasonForLeavingLastJob": "Lack of growth and opportunity."
+    },
+    "SkillsCertifications": {
+      "TechnicalSkills": [ "Basic knowledge of manual testing" ],
+      "SoftSkills": [ "Basic communication", "Following instructions" ],
+      "Certifications": [],
+      "LanguagesSpoken": [ "English", "French" ]
+    },
+    "Health": {
+      "PhysicalHealthStatus": "Average",
+      "MentalHealthStatus": "Frequently stressed",
+      "KnownAllergies": [ "None" ],
+      "ChronicConditions": [ "None" ],
+      "ExerciseHabits": "Occasional walking",
+      "DietPreferences": "No specific preferences"
+    },
+    "Psychology": {
+      "PersonalityType": "ISFP",
+      "StressCopingMechanisms": [ "Avoidance, procrastination" ],
+      "PastTraumas": [ "N/A" ],
+      "GeneralOutlookOnLife": "Indifferent, passive",
+      "CommunicationStyle": "Non-confrontational, reserved"
+    },
+    "Hobbies": {
+      "Hobbies": [ "Watching TV shows", "Browsing social media" ],
+      "PersonalProjects": [ "None" ],
+      "VolunteerActivities": [ "None" ],
+      "FavoriteBooks": "None",
+      "FavoriteMovies": "Romantic comedies"
+    },
+    "Social": {
+      "CloseFriends": [ "A few acquaintances" ],
+      "SocialMediaPresence": "Facebook",
+      "CommunityInvolvement": "None",
+      "RelationshipStatus": "Single",
+      "NetworkingGroups": []
+    }
+  }
+}

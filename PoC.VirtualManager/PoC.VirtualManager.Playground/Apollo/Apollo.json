@@ -1,0 +1,20 @@
+{
+  "Id": "apolloTeamId",
+  "CreatedAt": "2024-01-15T10:00:00Z",
+  "UpdatedAt": "2024-09-21T13:30:00Z",
+  "Name": "Apollo",
+  "TeamMembersIds": [
+    "marcoAgostinhoId",
+    "fabioAnselmoId",
+    "rodrigoCorreiaId",
+    "diogoVianaId",
+    "carlosRomanaId",
+    "joaquimTapadasId",
+    "tahiraVissaramId"
+  ],
+  "Description": "The team responsible for the data ingestion process at Frotcom International, handling all incoming vehicle data efficiently.",
+  "Department": "Fleet Management",
+  "DomainExpertise": "Fleet Data Management and Ingestion",
+  "TechnicalExpertise": ".NET, C#, Node.js, Vue.js, Data Engineering",
+  "Methodoly": "Agile, Scrum"
+}

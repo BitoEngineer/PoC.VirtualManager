@@ -14,6 +14,10 @@ using System.Runtime.CompilerServices;
 using PoC.VirtualManager.Slack.Client;
 using PoC.VirtualManager.Interactions.Slack.Client.Models.Nested;
 using PoC.VirtualManager.Slack.Client.Models.Messaging;
+using PoC.VirtualManager.Interactions.Slack.Listener.Models;
+using System.Runtime;
+using Microsoft.VisualBasic;
+using PoC.VirtualManager.Interactions.Slack.Client;
 
 namespace PoC.VirtualManager.Interactions.Slack.Listener
 {
@@ -26,6 +30,7 @@ namespace PoC.VirtualManager.Interactions.Slack.Listener
      */
     internal class SlackListenerBackgroundService : BackgroundService
     {
+        private readonly SlackListenerSettings _settings;
         private readonly IChatCompletionService _chatCompletionService;
         private readonly StreamWriter _writer;
         private readonly ISlackClient _slackClient;
@@ -33,13 +38,16 @@ namespace PoC.VirtualManager.Interactions.Slack.Listener
         private readonly ILogger<SlackListenerBackgroundService> _logger;
         private readonly Channel<SlackInteractionsQueueItem> _interactionsChannel;
 
-        public SlackListenerBackgroundService(IChatCompletionService chatCompletionService,
+        public SlackListenerBackgroundService(
+            SlackListenerSettings settings,
+            IChatCompletionService chatCompletionService,
             StreamWriter writer,
             ISlackClient slackClient,
             IUsersCache usersCache,
             ILogger<SlackListenerBackgroundService> logger,
             [FromKeyedServices("slack-interactions-channel")] Channel<SlackInteractionsQueueItem> interactionsChannel)
         {
+            ArgumentNullException.ThrowIfNull(settings, nameof(settings));
             ArgumentNullException.ThrowIfNull(chatCompletionService, nameof(chatCompletionService));
             ArgumentNullException.ThrowIfNull(interactionsChannel, nameof(interactionsChannel));
             ArgumentNullException.ThrowIfNull(writer, nameof(writer));
@@ -47,6 +55,7 @@ namespace PoC.VirtualManager.Interactions.Slack.Listener
             ArgumentNullException.ThrowIfNull(usersCache, nameof(usersCache));
             ArgumentNullException.ThrowIfNull(logger, nameof(logger));
 
+            _settings = settings;
             _chatCompletionService = chatCompletionService;
             _writer = writer;
             _interactionsChannel = interactionsChannel;
@@ -59,17 +68,14 @@ namespace PoC.VirtualManager.Interactions.Slack.Listener
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                await foreach(var interaction in ConsumeLatestSlackInteractionsAsync(stoppingToken).WithCancellation(stoppingToken))
+                await foreach (var interaction in ConsumeLatestSlackInteractionsAsync(stoppingToken).WithCancellation(stoppingToken))
                 {
-                    if(interaction.ChannelName == "virtual-manager") //TODO remove
-                    {
-                        await _interactionsChannel.Writer.WriteAsync(interaction, stoppingToken);
-                    }
+                    await _interactionsChannel.Writer.WriteAsync(interaction, stoppingToken);
                 }
 
-                await Task.Delay(TimeSpan.FromSeconds(60));
+                await Task.Delay(TimeSpan.FromSeconds(_settings.SlackPollingIntervalSecs));
             }
-        } 
+        }
 
         private async IAsyncEnumerable<SlackInteractionsQueueItem> ConsumeLatestSlackInteractionsAsync([EnumeratorCancellation] CancellationToken stoppingToken)
         {
@@ -80,7 +86,7 @@ namespace PoC.VirtualManager.Interactions.Slack.Listener
                 foreach (var channel in allChannels.Conversations) //DMs and private channels not included, and not possible :(
                 {
                     var channelsInteractionsQueueItem = await ProcessSlackChannelAsync(channel, stoppingToken);
-                    
+
                     if (!channelsInteractionsQueueItem.Messages.Any())
                     {
                         continue;
@@ -102,7 +108,7 @@ namespace PoC.VirtualManager.Interactions.Slack.Listener
             var history = await _slackClient.GetConversationHistoryAsync(
                 channel.Id,
                 from,
-                to, 
+                to,
                 stoppingToken);
 
             if (history.Ok)
@@ -111,7 +117,7 @@ namespace PoC.VirtualManager.Interactions.Slack.Listener
                     from,
                     to,
                     _usersCache,
-                    channel, 
+                    channel,
                     stoppingToken);
             }
             else if (history.Error.ToEnum() == SlackApiError.NotInChannel)

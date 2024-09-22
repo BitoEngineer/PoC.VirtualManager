@@ -22,25 +22,7 @@ namespace PoC.VirtualManager.Plugins
         [return: Description("The personality trait meaning")]
         public async Task<Trait> GetPersonalityTraitMeaning(string personalityTrait)
         {
-            var traits = await _teamsApiClient.GetPersonalityTraitMeaningAsync(personalityTrait);
-            return GetTraitByName(personalityTrait, traits);
-        }
-
-        public Trait GetTraitByName(string traitName, PersonalityTraits traits)
-        {
-            PropertyInfo property = typeof(PersonalityTraits).GetProperty(traitName);
-
-            if (property == null)
-            {
-                throw new ArgumentException("Invalid trait name");
-            }
-
-            if (!typeof(Trait).IsAssignableFrom(property.PropertyType))
-            {
-                throw new ArgumentException("Property is not of type Trait");
-            }
-
-            return (Trait)property.GetValue(traits);
+            return await _teamsApiClient.GetPersonalityTraitMeaningAsync(personalityTrait);
         }
     }
 }

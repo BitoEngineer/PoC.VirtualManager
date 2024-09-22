@@ -99,7 +99,7 @@ namespace PoC.VirtualManager.Teams.Client.Models
     public class PsychologicalProfile
     {
         public string PersonalityType { get; set; }
-        public string StressCopingMechanisms { get; set; }
+        public List<string> StressCopingMechanisms { get; set; }
         public List<string> PastTraumas { get; set; }
         public string GeneralOutlookOnLife { get; set; }
         public string CommunicationStyle { get; set; }

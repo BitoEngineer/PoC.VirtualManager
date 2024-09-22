@@ -1,0 +1,125 @@
+{
+  "Id": "64f4e9f5a123b53cefba5f1e",
+  "CreatedAt": "2022-09-01T09:00:00Z",
+  "UpdatedAt": "2024-09-21T11:30:00Z",
+  "TeamId": "apolloTeamId",
+  "LineManagerId": "marcoAgostinhoId",
+  "TechLeadId": "derecksonSantanaId",
+  "Name": "Diogo Viana",
+  "Role": "Senior Frontend Engineer",
+  "Email": "diogo.viana@frotcom.com",
+  "BirthDate": "1990-05-20T00:00:00Z",
+  "JoinDate": "2022-09-01T00:00:00Z",
+  "Seniority": "Senior",
+  "PersonalityTraitsScore": {
+    "Openness": 60,
+    "Intellect": 80,
+    "OpennessToExperience": 50,
+    "Volatility": 70,
+    "Withdrawal": 40,
+    "Neuroticism": 65,
+    "Assertiveness": 85,
+    "Enthusiasm": 60,
+    "Extraversion": 70,
+    "Orderliness": 60,
+    "Industriousness": 80,
+    "Conscientiousness": 75,
+    "Politeness": 55,
+    "Compassion": 45,
+    "Agreeableness": 50
+  },
+  "Background": {
+    "PersonalDetails": {
+      "FullName": "Diogo Viana",
+      "DateOfBirth": "1990-05-20T00:00:00Z",
+      "Gender": "Male",
+      "Nationality": "Portuguese",
+      "MaritalStatus": "Single",
+      "Address": "45 Developer Ave, Porto, Portugal",
+      "ContactNumber": "+351 919876543",
+      "Email": "diogo.viana@frotcom.com"
+    },
+    "Family": {
+      "ParentsNames": "Pedro Viana, Ana Viana",
+      "Siblings": "None",
+      "ChildhoodEnvironment": "Raised in a disciplined household, often pushed to excel.",
+      "SignificantChildhoodEvents": [ "Excelled in math competitions", "Built first web app at 15" ],
+      "RelationshipWithParents": "Strict but supportive",
+      "RelationshipWithSiblings": "N/A"
+    },
+    "Education": {
+      "EducationHistory": [
+        {
+          "InstitutionName": "University of Porto",
+          "Degree": "Bachelor's in Information Technology",
+          "Major": "Frontend Development",
+          "StartDate": "2008-09-01T00:00:00Z",
+          "EndDate": "2012-07-01T00:00:00Z",
+          "GPA": 3.6
+        }
+      ],
+      "HighestDegree": "Bachelor's in Information Technology",
+      "Major": "Frontend Development",
+      "InstitutionsAttended": "University of Porto"
+    },
+    "WorkHistory": {
+      "JobHistory": [
+        {
+          "JobTitle": "Frontend Developer",
+          "CompanyName": "WebTech",
+          "StartDate": "2012-09-01T00:00:00Z",
+          "EndDate": "2016-06-01T00:00:00Z",
+          "Responsibilities": "Developed responsive UIs using JavaScript frameworks.",
+          "Achievements": "Led the team to successfully deliver several high-profile projects."
+        },
+        {
+          "JobTitle": "Senior Frontend Engineer",
+          "CompanyName": "Creative Solutions",
+          "StartDate": "2016-07-01T00:00:00Z",
+          "EndDate": "2022-08-01T00:00:00Z",
+          "Responsibilities": "Led frontend development for web and mobile apps.",
+          "Achievements": "Improved frontend performance by 30%."
+        }
+      ],
+      "CurrentPosition": "Senior Frontend Engineer",
+      "CurrentEmployer": "Innovate Tech",
+      "DateJoined": "2022-09-01T00:00:00Z",
+      "ReasonForLeavingLastJob": "Looking for more responsibility and leadership roles"
+    },
+    "SkillsCertifications": {
+      "TechnicalSkills": [ "Vue.js", "Node.js", "JavaScript", "TypeScript", "CSS", "HTML" ],
+      "SoftSkills": [ "Team Leadership", "Problem Solving", "Mentoring" ],
+      "Certifications": [ "Certified JavaScript Developer" ],
+      "LanguagesSpoken": [ "Portuguese", "English" ]
+    },
+    "Health": {
+      "PhysicalHealthStatus": "Good",
+      "MentalHealthStatus": "Tends to stress under pressure",
+      "KnownAllergies": [ "None" ],
+      "ChronicConditions": [ "None" ],
+      "ExerciseHabits": "Goes to the gym regularly",
+      "DietPreferences": "Balanced diet with occasional indulgence"
+    },
+    "Psychology": {
+      "PersonalityType": "ENTJ",
+      "StressCopingMechanisms": [ "Intense workouts", "Playing video games" ],
+      "PastTraumas": [],
+      "GeneralOutlookOnLife": "Driven but sometimes cynical",
+      "CommunicationStyle": "Direct, sometimes harsh"
+    },
+    "Hobbies": {
+      "Hobbies": [ "Playing competitive video games", "Building personal web projects" ],
+      "PersonalProjects": [ "Developing a gaming forum platform" ],
+      "VolunteerActivities": [ "Mentoring junior developers" ],
+      "FavoriteBooks": "Clean Code by Robert C. Martin",
+      "FavoriteMovies": "Inception"
+    },
+    "Social": {
+      "CloseFriends": [ "Luis Costa", "Fernando Oliveira" ],
+      "SocialMediaPresence": "LinkedIn, GitHub",
+      "CommunityInvolvement": "Active in frontend developer meetups",
+      "RelationshipStatus": "Single",
+      "NetworkingGroups": [ "Vue.js User Group", "Node.js Community" ]
+    }
+  }
+}
