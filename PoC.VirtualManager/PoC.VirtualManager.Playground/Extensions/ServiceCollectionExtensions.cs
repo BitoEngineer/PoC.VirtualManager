@@ -2,7 +2,7 @@
 using PoC.VirtualManager.Interactions.Slack.Client;
 using PoC.VirtualManager.Playground.Apollo;
 using PoC.VirtualManager.Slack.Client;
-using PoC.VirtualManager.Teams.Client;
+using PoC.VirtualManager.Company.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;

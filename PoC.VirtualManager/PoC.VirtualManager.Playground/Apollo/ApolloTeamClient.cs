@@ -1,5 +1,5 @@
-﻿using PoC.VirtualManager.Teams.Client;
-using PoC.VirtualManager.Teams.Client.Models;
+﻿using PoC.VirtualManager.Company.Client;
+using PoC.VirtualManager.Company.Client.Models;
 using System.Reflection;
 using System.Text.Json;
 

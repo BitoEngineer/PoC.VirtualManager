@@ -41,8 +41,8 @@
 		<ProjectReference Include="..\PoC.VirtualManager.Interactions.Slack.Plugins\PoC.VirtualManager.Interactions.Slack.Plugins.csproj" />
 		<ProjectReference Include="..\PoC.VirtualManager.Interactions.Slack.Provider\PoC.VirtualManager.Interactions.Slack.Broadcaster.csproj" />
 		<ProjectReference Include="..\PoC.VirtualManager.Playground\PoC.VirtualManager.Playground.csproj" />
-		<ProjectReference Include="..\PoC.VirtualManager.Plugins\PoC.VirtualManager.Teams.Plugins.csproj" />
-		<ProjectReference Include="..\PoC.VirtualManager.TeamsAPI.Client\PoC.VirtualManager.Teams.Client.csproj" />
+		<ProjectReference Include="..\PoC.VirtualManager.Company.Plugins\PoC.VirtualManager.Company.Plugins.csproj" />
+		<ProjectReference Include="..\PoC.VirtualManager.Company.Client\PoC.VirtualManager.Company.Client.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

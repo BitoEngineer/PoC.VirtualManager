@@ -1,5 +1,5 @@
-﻿using PoC.VirtualManager.Teams.Client.Models;
-using PoC.VirtualManager.Teams.Infrastructure;
+﻿using PoC.VirtualManager.Company.Client.Models;
+using PoC.VirtualManager.Company.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;

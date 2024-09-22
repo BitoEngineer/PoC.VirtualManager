@@ -7,7 +7,7 @@ using Microsoft.SemanticKernel;
 using PoC.VirtualManager.Brain.FrontalLobe.Personality.Leadership;
 using PoC.VirtualManager.Plugins;
 using PoC.VirtualManager.Slack.Client.Models.Messaging;
-using PoC.VirtualManager.Teams.Plugins;
+using PoC.VirtualManager.Company.Plugins;
 using System;
 using System.Collections.Generic;
 using System.Linq;

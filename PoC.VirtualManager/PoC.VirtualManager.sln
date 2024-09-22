@@ -5,9 +5,7 @@ VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager", "PoC.VirtualManager\PoC.VirtualManager.csproj", "{98965094-30A9-4E6B-9DB1-35549FD62F50}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Teams.Client", "PoC.VirtualManager.TeamsAPI.Client\PoC.VirtualManager.Teams.Client.csproj", "{A5BE850E-F77E-4BC0-AD46-09F60328B4BB}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Teams.Plugins", "PoC.VirtualManager.Plugins\PoC.VirtualManager.Teams.Plugins.csproj", "{B6DDBEBF-CBD7-4EF1-B7C0-FB15A4BC4690}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Company.Plugins", "PoC.VirtualManager.Company.Plugins\PoC.VirtualManager.Company.Plugins.csproj", "{B6DDBEBF-CBD7-4EF1-B7C0-FB15A4BC4690}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Interactions.Slack.Listener", "PoC.VirtualManager.Interactions.Slack.Listener\PoC.VirtualManager.Interactions.Slack.Listener.csproj", "{959B8190-4247-41EE-A2A7-259C329899C4}"
 EndProject
@@ -15,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Interact
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "interactions", "interactions", "{4969CDB6-6E08-4FED-AC3F-BD62084B4A81}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "teams", "teams", "{3F61B614-049C-4457-9DBE-51039A473481}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "company", "company", "{3F61B614-049C-4457-9DBE-51039A473481}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Interactions.Models", "PoC.VirtualManager.Interactions.Models\PoC.VirtualManager.Interactions.Models.csproj", "{5B0149CE-5FC7-409F-826C-B7486BDE06C1}"
 EndProject
@@ -35,11 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Slack.Cl
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{BEAF579D-EA55-444D-9C4D-F246474D6330}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Teams.Infrastructure", "PoC.VirtualManager.Teams.Repository\PoC.VirtualManager.Teams.Infrastructure.csproj", "{E841089E-0A9F-4C6F-940A-B0A05EBA9B8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Company.Infrastructure", "PoC.VirtualManager.Company.Infrastructure\PoC.VirtualManager.Company.Infrastructure.csproj", "{E841089E-0A9F-4C6F-940A-B0A05EBA9B8F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Teams.Models", "PoC.VirtualManager.Teams.Models\PoC.VirtualManager.Teams.Models.csproj", "{B8D7A66E-FC45-4D4E-A493-26288B5065A9}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Teams.Api", "PoC.VirtualManager.Teams.Api\PoC.VirtualManager.Teams.Api.csproj", "{00D88D91-CF46-43F1-9282-BDC9E64B7C31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Company.Models", "PoC.VirtualManager.Company.Models\PoC.VirtualManager.Company.Models.csproj", "{B8D7A66E-FC45-4D4E-A493-26288B5065A9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{FFDAA1BB-463C-4FB6-B161-EF7595ED0005}"
 EndProject
@@ -63,7 +59,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.FineTuni
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utils", "utils", "{B2009075-DA02-4DAD-B793-751F54C635BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoC.VirtualManager.Utils.MongoDb", "PoC.VirtualManager.Utils.MongoDb\PoC.VirtualManager.Utils.MongoDb.csproj", "{433D3F11-C076-43B2-89ED-BF85D09163C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Utils.MongoDb", "PoC.VirtualManager.Utils.MongoDb\PoC.VirtualManager.Utils.MongoDb.csproj", "{433D3F11-C076-43B2-89ED-BF85D09163C2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Company.Api", "PoC.VirtualManager.Company.Api\PoC.VirtualManager.Company.Api.csproj", "{85E7BA22-B3DC-4B68-8B24-84D1418A4A31}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoC.VirtualManager.Company.Client", "PoC.VirtualManager.Company.Client\PoC.VirtualManager.Company.Client.csproj", "{938DD8E4-A8F2-454E-836E-57D6B7FA657A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,10 +75,6 @@ Global
 		{98965094-30A9-4E6B-9DB1-35549FD62F50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98965094-30A9-4E6B-9DB1-35549FD62F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98965094-30A9-4E6B-9DB1-35549FD62F50}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A5BE850E-F77E-4BC0-AD46-09F60328B4BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5BE850E-F77E-4BC0-AD46-09F60328B4BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5BE850E-F77E-4BC0-AD46-09F60328B4BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5BE850E-F77E-4BC0-AD46-09F60328B4BB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B6DDBEBF-CBD7-4EF1-B7C0-FB15A4BC4690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B6DDBEBF-CBD7-4EF1-B7C0-FB15A4BC4690}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6DDBEBF-CBD7-4EF1-B7C0-FB15A4BC4690}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -115,10 +111,6 @@ Global
 		{B8D7A66E-FC45-4D4E-A493-26288B5065A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8D7A66E-FC45-4D4E-A493-26288B5065A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8D7A66E-FC45-4D4E-A493-26288B5065A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{00D88D91-CF46-43F1-9282-BDC9E64B7C31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{00D88D91-CF46-43F1-9282-BDC9E64B7C31}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{00D88D91-CF46-43F1-9282-BDC9E64B7C31}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{00D88D91-CF46-43F1-9282-BDC9E64B7C31}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2C3D3FE5-9304-446A-A764-AA8047763B56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2C3D3FE5-9304-446A-A764-AA8047763B56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C3D3FE5-9304-446A-A764-AA8047763B56}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -147,12 +139,19 @@ Global
 		{433D3F11-C076-43B2-89ED-BF85D09163C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{433D3F11-C076-43B2-89ED-BF85D09163C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{433D3F11-C076-43B2-89ED-BF85D09163C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85E7BA22-B3DC-4B68-8B24-84D1418A4A31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85E7BA22-B3DC-4B68-8B24-84D1418A4A31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85E7BA22-B3DC-4B68-8B24-84D1418A4A31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85E7BA22-B3DC-4B68-8B24-84D1418A4A31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{938DD8E4-A8F2-454E-836E-57D6B7FA657A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{938DD8E4-A8F2-454E-836E-57D6B7FA657A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{938DD8E4-A8F2-454E-836E-57D6B7FA657A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{938DD8E4-A8F2-454E-836E-57D6B7FA657A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{A5BE850E-F77E-4BC0-AD46-09F60328B4BB} = {3F61B614-049C-4457-9DBE-51039A473481}
 		{B6DDBEBF-CBD7-4EF1-B7C0-FB15A4BC4690} = {3F61B614-049C-4457-9DBE-51039A473481}
 		{959B8190-4247-41EE-A2A7-259C329899C4} = {4E9325BA-9E60-4901-B39A-40411F113349}
 		{EB2D7161-FAA7-4B19-8DE8-8CEF797D4E8E} = {4E9325BA-9E60-4901-B39A-40411F113349}
@@ -167,7 +166,6 @@ Global
 		{BEAF579D-EA55-444D-9C4D-F246474D6330} = {4969CDB6-6E08-4FED-AC3F-BD62084B4A81}
 		{E841089E-0A9F-4C6F-940A-B0A05EBA9B8F} = {3F61B614-049C-4457-9DBE-51039A473481}
 		{B8D7A66E-FC45-4D4E-A493-26288B5065A9} = {3F61B614-049C-4457-9DBE-51039A473481}
-		{00D88D91-CF46-43F1-9282-BDC9E64B7C31} = {3F61B614-049C-4457-9DBE-51039A473481}
 		{FFDAA1BB-463C-4FB6-B161-EF7595ED0005} = {3F61B614-049C-4457-9DBE-51039A473481}
 		{2C3D3FE5-9304-446A-A764-AA8047763B56} = {FFDAA1BB-463C-4FB6-B161-EF7595ED0005}
 		{86F7F9DB-3C50-409C-A931-935F57AB0832} = {BEAF579D-EA55-444D-9C4D-F246474D6330}
@@ -177,6 +175,8 @@ Global
 		{175FF763-FA96-445A-9621-55855D2CBC8E} = {0F61BE25-40B5-4453-BD72-F8CF571F7177}
 		{49625287-4481-4458-AEA9-713211AA4007} = {175FF763-FA96-445A-9621-55855D2CBC8E}
 		{433D3F11-C076-43B2-89ED-BF85D09163C2} = {B2009075-DA02-4DAD-B793-751F54C635BC}
+		{85E7BA22-B3DC-4B68-8B24-84D1418A4A31} = {3F61B614-049C-4457-9DBE-51039A473481}
+		{938DD8E4-A8F2-454E-836E-57D6B7FA657A} = {3F61B614-049C-4457-9DBE-51039A473481}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE73187D-7066-44CB-A088-C27CA58A1FD4}

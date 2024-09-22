@@ -78,7 +78,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PoC.VirtualManager.Slack.Client\PoC.VirtualManager.Slack.Client.csproj" />
-    <ProjectReference Include="..\PoC.VirtualManager.TeamsAPI.Client\PoC.VirtualManager.Teams.Client.csproj" />
+    <ProjectReference Include="..\PoC.VirtualManager.Company.Client\PoC.VirtualManager.Company.Client.csproj" />
   </ItemGroup>
 
   <ItemGroup>
