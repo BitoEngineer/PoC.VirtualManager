@@ -10,9 +10,24 @@ namespace PoC.VirtualManager.Company.Infrastructure
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddTeamsRespositories(this IServiceCollection services, string mongoDbConnectionString)
+        public static IServiceCollection AddCompanyRepositories(this IServiceCollection services, 
+            string mongoDbConnectionString,
+            string databaseName)
         {
-            services.AddSingleton<ITeamsRepository, TeamsRepository>(_ => new TeamsRepository(mongoDbConnectionString));
+            ArgumentNullException.ThrowIfNull(mongoDbConnectionString, nameof(mongoDbConnectionString));
+            ArgumentNullException.ThrowIfNull(databaseName, nameof(databaseName));
+
+            services.AddSingleton<ITeamsRepository, TeamsRepository>(
+                _ => new TeamsRepository(
+                    databaseName: databaseName,
+                    mongoDbConnectionString: mongoDbConnectionString)
+            );
+            services.AddSingleton<ITeamMembersRepository, TeamMembersRepository>(
+                serviceProvider => new TeamMembersRepository(
+                    databaseName: databaseName,
+                    mongoDbConnectionString: mongoDbConnectionString,
+                    teamsRepository: serviceProvider.GetRequiredService<ITeamsRepository>())
+            );
 
             return services;
         }

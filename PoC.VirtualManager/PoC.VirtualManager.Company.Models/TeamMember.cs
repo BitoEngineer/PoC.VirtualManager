@@ -6,19 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using PoC.VirtualManager.Utils.MongoDb.Models;
 
 namespace PoC.VirtualManager.Company.Client.Models
 {
-    public class TeamMember
+    public class TeamMember : MongoDbEntity
     {
-        [BsonElement("_id")]
-        [JsonPropertyName("_id")]
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
-
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
         public string? TeamId { get; set; }
         public string? LineManagerId { get; set; }
         public string? TechLeadId { get; set; }

@@ -10,22 +10,25 @@ namespace PoC.VirtualManager.Company.Api.Controllers
     [Route("teams/members")]
     public class TeamMembersController : ControllerBase
     {
-        private readonly ITeamsRepository _teamRepository;
+        private readonly ITeamMembersRepository _teamMembersRepository;
 
-        public TeamMembersController(ITeamsRepository teamRepository)
+        public TeamMembersController(ITeamMembersRepository teamMembersRepository)
         {
-            _teamRepository = teamRepository;
+            ArgumentNullException.ThrowIfNull(teamMembersRepository, nameof(teamMembersRepository));
+            _teamMembersRepository = teamMembersRepository;
         }
 
         [HttpPost] //TODO import from factorial
-        public async Task<IActionResult> CreateTeamMember([FromBody] TeamMemberDto teamMemberDto)
+        public async Task<IActionResult> CreateTeamMember(
+            [FromBody] TeamMemberDto teamMemberDto,
+            CancellationToken cancellationToken)
         {
             if (teamMemberDto == null)
             {
                 return BadRequest("TeamMember cannot be null.");
             }
 
-            var existentTeamMember = await _teamRepository.GetTeamMemberByNameAsync(teamMemberDto.Name);
+            var existentTeamMember = await _teamMembersRepository.GetByNameAsync(teamMemberDto.Name, cancellationToken);
             if (existentTeamMember != null)
             {
                 return Conflict(new
@@ -37,20 +40,23 @@ namespace PoC.VirtualManager.Company.Api.Controllers
 
             var teamMember = teamMemberDto.Adapt<TeamMember>();
 
-            teamMember = await _teamRepository.UpsertTeamMemberAsync(teamMember);
+            teamMember = await _teamMembersRepository.InsertAsync(teamMember, cancellationToken);
 
             return CreatedAtAction(nameof(CreateTeamMember), new { id = teamMember.Id }, teamMember);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateTeamMember(string id, [FromBody] TeamMemberWithIdDto teamMemberDto)
+        public async Task<IActionResult> UpdateTeamMember(
+            string id, 
+            [FromBody] TeamMemberWithIdDto teamMemberDto,
+            CancellationToken cancellationToken)
         {
             if (teamMemberDto == null)
             {
                 return BadRequest("Invalid team data.");
             }
 
-            var existingTeamMember = await _teamRepository.GetTeamMemberByIdAsync(id);
+            var existingTeamMember = await _teamMembersRepository.GetByIdAsync(id, cancellationToken);
 
             if (existingTeamMember == null)
             {
@@ -64,15 +70,15 @@ namespace PoC.VirtualManager.Company.Api.Controllers
 
             teamMemberDto.Adapt(existingTeamMember);
 
-            await _teamRepository.UpsertTeamMemberAsync(existingTeamMember);
+            await _teamMembersRepository.InsertAsync(existingTeamMember, cancellationToken);
 
             return NoContent();
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetTeamMemberById(string id)
+        public async Task<IActionResult> GetTeamMemberById(string id, CancellationToken cancellationToken)
         {
-            var team = await _teamRepository.GetTeamMemberByIdAsync(id);
+            var team = await _teamMembersRepository.GetByIdAsync(id, cancellationToken);
 
             if (team == null)
             {

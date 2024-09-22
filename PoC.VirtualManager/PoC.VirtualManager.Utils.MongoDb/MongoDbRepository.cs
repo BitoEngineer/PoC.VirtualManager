@@ -1,5 +1,6 @@
 ﻿using MongoDB.Driver;
 using PoC.VirtualManager.Utils.MongoDb.Models;
+using System.Threading;
 
 namespace PoC.VirtualManager.Utils.MongoDb
 {
@@ -33,46 +34,98 @@ namespace PoC.VirtualManager.Utils.MongoDb
             Database = new Lazy<IMongoDatabase>(() => Client.GetDatabase(Settings.DatabaseName));
         }
 
-        public async Task<T> GetByIdAsync(string id)
+        public virtual async Task<T> GetByIdAsync(string id, CancellationToken cancellationToken)
         {
             var filter = Builders<T>.Filter.Eq(t => t.Id, id);
 
-            return await (await GetOrCreateCollectionAsync()).Find(filter).FirstOrDefaultAsync();
+            return await (await GetOrCreateCollectionAsync(cancellationToken))
+                .Find(filter)
+                .FirstOrDefaultAsync(cancellationToken);
         }
 
-        public async Task<T> GetByFilterAsync(FilterDefinition<T> filter)
+        public virtual async Task<T> GetByIdAsync(string id, IClientSessionHandle session, CancellationToken cancellationToken)
         {
-            return await (await GetOrCreateCollectionAsync()).Find(filter).FirstOrDefaultAsync();
+            var filter = Builders<T>.Filter.Eq(t => t.Id, id);
+
+            return await (await GetOrCreateCollectionAsync(cancellationToken))
+                .Find(session, filter)
+                .FirstOrDefaultAsync(cancellationToken);
         }
 
-        public async Task<T> InsertAsync(T item, CancellationToken cancellationToken)
+        public virtual async Task<T> GetByFilterAsync(
+            FilterDefinition<T> filter, 
+            CancellationToken cancellationToken)
+        {
+            return await (await GetOrCreateCollectionAsync(cancellationToken))
+                .Find(filter)
+                .FirstOrDefaultAsync(cancellationToken);
+        }
+
+        public virtual async Task<T> InsertAsync(T item, 
+            CancellationToken cancellationToken)
         {
             item.CreatedAt = DateTime.Now;
             item.UpdatedAt = DateTime.Now;
-            (await GetOrCreateCollectionAsync()).InsertOneAsync(item, new InsertOneOptions
+            await (await GetOrCreateCollectionAsync(cancellationToken)).InsertOneAsync(item, new InsertOneOptions
             {
             }, cancellationToken);
 
             return item;
         }
 
-        public async Task<T> UpdateAsync(T item)
+        public virtual async Task<T> UpdateAsync(T item,
+            CancellationToken cancellationToken)
         {
             var filter = Builders<T>.Filter.Eq(t => t.Id, item.Id);
 
             item.UpdatedAt = DateTime.UtcNow;
-            var result = (await GetOrCreateCollectionAsync()).ReplaceOneAsync(
+            var result = (await GetOrCreateCollectionAsync(cancellationToken)).ReplaceOneAsync(
                 filter,
                 item,
-                new ReplaceOptions { IsUpsert = false }
+                new ReplaceOptions { IsUpsert = false },
+                cancellationToken
             );
 
             return item;
         }
 
-        private async Task<IMongoCollection<T>> GetOrCreateCollectionAsync()
+        public virtual async Task<T> UpdateAsync(T item,
+            IClientSessionHandle session,
+            CancellationToken cancellationToken)
         {
-            if(_collection != null)
+            var filter = Builders<T>.Filter.Eq(t => t.Id, item.Id);
+
+            item.UpdatedAt = DateTime.UtcNow;
+            var result = (await GetOrCreateCollectionAsync(cancellationToken)).ReplaceOneAsync(
+                session,
+                filter,
+                item,
+                new ReplaceOptions { IsUpsert = false },
+                cancellationToken
+            );
+
+            return item;
+        }
+
+        public virtual async Task<T> UpsertAsync(T item,
+            CancellationToken cancellationToken)
+        {
+            var filter = Builders<T>.Filter.Eq(t => t.Id, item.Id);
+
+            item.UpdatedAt = DateTime.UtcNow;
+            var result = (await GetOrCreateCollectionAsync(cancellationToken)).ReplaceOneAsync(
+                filter,
+                item,
+                new ReplaceOptions { IsUpsert = true },
+                cancellationToken
+            );
+
+            return item;
+        }
+
+        protected async Task<IMongoCollection<T>> GetOrCreateCollectionAsync(CancellationToken cancellationToken)
+        {
+            if (_collection != null)
             {
                 return _collection;
             }
@@ -81,7 +134,7 @@ namespace PoC.VirtualManager.Utils.MongoDb
 
             if (collection == null)
             {
-                await Database.Value.CreateCollectionAsync(Settings.CollectionName);
+                await Database.Value.CreateCollectionAsync(Settings.CollectionName, cancellationToken: cancellationToken);
             }
 
             _collection = collection ?? Database.Value.GetCollection<T>(Settings.CollectionName);

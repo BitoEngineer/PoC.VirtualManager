@@ -1,19 +1,12 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using PoC.VirtualManager.Utils.MongoDb.Models;
 using System.Text.Json.Serialization;
 
 namespace PoC.VirtualManager.Company.Client.Models
 {
-    public class Team
+    public class Team : MongoDbEntity
     {
-        [BsonElement("_id")]
-        [JsonPropertyName("_id")]
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
-
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
         public string Name { get; set; }
         public List<string> TeamMembersIds { get; set; } = new List<string>();
         public string Description { get; set; }

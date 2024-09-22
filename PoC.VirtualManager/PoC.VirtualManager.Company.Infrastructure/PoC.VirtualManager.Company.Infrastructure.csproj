@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PoC.VirtualManager.Company.Models\PoC.VirtualManager.Company.Models.csproj" />
+    <ProjectReference Include="..\PoC.VirtualManager.Utils.MongoDb\PoC.VirtualManager.Utils.MongoDb.csproj" />
   </ItemGroup>
 
 </Project>

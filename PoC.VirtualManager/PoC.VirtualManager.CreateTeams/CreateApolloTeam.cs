@@ -10,9 +10,22 @@ namespace PoC.VirtualManager.CreateTeams
 {
     public class CreateApolloTeam
     {
-        private readonly ITeamsRepository _repository = 
-            new TeamsRepository(Environment.GetEnvironmentVariable("VirtualManager_MongoDb_ConnectionString"));
-        
+        private const string DatabaseName = "Company";
+        private readonly ITeamsRepository _teamRepository;
+        private readonly ITeamMembersRepository _teamMembersRepository;
+
+        public CreateApolloTeam()
+        {
+            _teamRepository = new TeamsRepository(
+                databaseName: DatabaseName,
+                mongoDbConnectionString: Environment.GetEnvironmentVariable("VirtualManager_MongoDb_ConnectionString"));
+            
+            _teamMembersRepository = new TeamMembersRepository(
+               databaseName: DatabaseName,
+               mongoDbConnectionString: Environment.GetEnvironmentVariable("VirtualManager_MongoDb_ConnectionString"),
+               teamsRepository: _teamRepository);
+        }
+
         public async Task RunAsync()
         {
             var apolloTeam = new Team
@@ -27,20 +40,20 @@ namespace PoC.VirtualManager.CreateTeams
                 Methodoly = "Scrum",
             };
 
-            var apolloTeamWithId = await _repository.InsertTeamAsync(apolloTeam, default);
+            var apolloTeamWithId = await _teamRepository.InsertAsync(apolloTeam, default);
 
             var nunoCardoso = new TeamMember
             {
 
             };
-            var nunoCardosoWithId = await _repository.InsertTeamMemberAsync(nunoCardoso, default);
+            var nunoCardosoWithId = await _teamMembersRepository.InsertAsync(nunoCardoso, default);
 
             var fabioAnselmo = new TeamMember
             {
                 TeamId = apolloTeamWithId.Id,
                 TechLeadId = nunoCardosoWithId.Id,
             };
-            var fabioAnselmoWithId = await _repository.InsertTeamMemberAsync(fabioAnselmo, default);
+            var fabioAnselmoWithId = await _teamMembersRepository.InsertAsync(fabioAnselmo, default);
 
             var marcoAgostinho = new TeamMember
             {

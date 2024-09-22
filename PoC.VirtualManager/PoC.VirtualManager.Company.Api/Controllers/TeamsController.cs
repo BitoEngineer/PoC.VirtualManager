@@ -25,7 +25,7 @@ namespace PoC.VirtualManager.Company.Api.Controllers
                 return BadRequest("Team cannot be null.");
             }
 
-            var existentTeam = await _teamRepository.GetTeamByNameAsync(teamDto.Name);
+            var existentTeam = await _teamRepository.GetByNameAsync(teamDto.Name, cancellationToken);
             if(existentTeam != null)
             {
                 return Conflict(new
@@ -37,20 +37,23 @@ namespace PoC.VirtualManager.Company.Api.Controllers
 
             var team = teamDto.Adapt<Team>();
 
-            team = await _teamRepository.InsertTeamAsync(team, cancellationToken);
+            team = await _teamRepository.InsertAsync(team, cancellationToken);
 
             return CreatedAtAction(nameof(CreateTeam), new { team.Id }, team.Adapt<TeamWithIdDto>());
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateTeam(string id, [FromBody] TeamWithIdDto teamDto)
+        public async Task<IActionResult> UpdateTeam(
+            string id, 
+            [FromBody] TeamWithIdDto teamDto,
+            CancellationToken cancellationToken)
         {
             if (teamDto == null)
             {
                 return BadRequest("Invalid team data.");
             }
 
-            var existingTeam = await _teamRepository.GetTeamByIdAsync(id);
+            var existingTeam = await _teamRepository.GetByIdAsync(id, cancellationToken);
 
             if (existingTeam == null)
             {
@@ -59,15 +62,15 @@ namespace PoC.VirtualManager.Company.Api.Controllers
 
             teamDto.Adapt(existingTeam);
 
-            await _teamRepository.UpdateTeamAsync(existingTeam);
+            await _teamRepository.UpdateAsync(existingTeam, cancellationToken);
 
             return NoContent();
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetTeamById(string id)
+        public async Task<IActionResult> GetTeamById(string id, CancellationToken cancellationToken)
         {
-            var team = await _teamRepository.GetTeamByIdAsync(id);
+            var team = await _teamRepository.GetByIdAsync(id, cancellationToken);
 
             if (team == null)
             {
