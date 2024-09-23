@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using PoC.VirtualManager.Company.Infrastructure;
 
 namespace PoC.VirtualManager.Company.Client.Extensions
 {

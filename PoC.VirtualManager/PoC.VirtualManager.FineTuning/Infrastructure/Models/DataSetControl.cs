@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PoC.VirtualManager.FineTuning.Models
+namespace PoC.VirtualManager.FineTuning.Infrastructure.Models
 {
     public class DataSetControl : MongoDbEntity
     {
