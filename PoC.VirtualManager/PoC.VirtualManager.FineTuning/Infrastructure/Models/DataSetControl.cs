@@ -10,6 +10,9 @@ namespace PoC.VirtualManager.FineTuning.Infrastructure.Models
     public class DataSetControl : MongoDbEntity
     {
         public string Version { get; set; }
-        public string ScriptName { get; set; }
+        public string FileName { get; set; }
+        public string OpenAiFileId { get; set; }
+        public string OpenAiJobId { get; set; }
+        public string Status { get; set; }
     }
 }

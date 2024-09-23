@@ -9,7 +9,7 @@ namespace PoC.VirtualManager.FineTuning.Infrastructure
 {
     public interface IDataSetRepository
     {
-        IAsyncEnumerable<DataSetBundle> GetAllDataSetAsync(CancellationToken stoppingToken);
+        IAsyncEnumerable<DataSetFileMetadata> GetAllDataSetFilesMetadataAsync(CancellationToken stoppingToken);
     }
 
     internal class DataSetRepository

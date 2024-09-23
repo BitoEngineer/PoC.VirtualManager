@@ -7,21 +7,6 @@ using System.Threading.Tasks;
 
 namespace PoC.VirtualManager.FineTuning.Infrastructure.Models
 {
-    public class DataSetBundle
-    {
-        [JsonPropertyName("is_ready")]
-        public bool IsReady { get; set; }
-
-        [JsonPropertyName("version")]
-        public string Version { get; set; }
-
-        [JsonPropertyName("name")]
-        public string Name { get; set; }
-
-        [JsonPropertyName("dataset")]
-        public List<DataSet> DataSet { get; set; }
-    }
-
     public class DataSet
     {
         [JsonPropertyName("messages")]

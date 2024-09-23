@@ -8,45 +8,49 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="appsettings.json" />
     <None Remove="Dataset\CompanySpecific\CompanyEmployees.json" />
     <None Remove="Dataset\CompanySpecific\CompanyOrganizationalChart.json" />
     <None Remove="Dataset\CompanySpecific\CompanyValues.json" />
     <None Remove="Dataset\CompanySpecific\CompanyVisionAndMission.json" />
     <None Remove="Dataset\CompanySpecific\CompanyWoW.json" />
-    <None Remove="Dataset\VirtualManagerPersonality\ConflictResolution.json" />
-    <None Remove="Dataset\VirtualManagerPersonality\EmployeeDevelopment.json" />
-    <None Remove="Dataset\VirtualManagerPersonality\HumanInteractions.json" />
-    <None Remove="Dataset\VirtualManagerPersonality\Management.json" />
-    <None Remove="Dataset\VirtualManagerPersonality\OrganizationalTheoryAndBehavior.json" />
-    <None Remove="Dataset\VirtualManagerPersonality\Psychology.json" />
+    <None Remove="Dataset\VirtualManagerPersonality\ConflictResolution_1_0_0.jsonl" />
+    <None Remove="Dataset\VirtualManagerPersonality\EmployeeDevelopment.jsonl" />
+    <None Remove="Dataset\VirtualManagerPersonality\HumanInteractions.jsonl" />
+    <None Remove="Dataset\VirtualManagerPersonality\Management.jsonl" />
+    <None Remove="Dataset\VirtualManagerPersonality\OrganizationalTheoryAndBehavior.jsonl" />
+    <None Remove="Dataset\VirtualManagerPersonality\Psychology.jsonl" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Dataset\CompanySpecific\CompanyValues.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Dataset\CompanySpecific\CompanyWoW.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Dataset\VirtualManagerPersonality\EmployeeDevelopment.json">
+    <Content Include="Dataset\VirtualManagerPersonality\EmployeeDevelopment.jsonl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Dataset\VirtualManagerPersonality\HumanInteractions.json">
+    <Content Include="Dataset\VirtualManagerPersonality\HumanInteractions.jsonl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Dataset\VirtualManagerPersonality\Psychology.json">
+    <Content Include="Dataset\VirtualManagerPersonality\Psychology.jsonl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Dataset\VirtualManagerPersonality\Management.json">
+    <Content Include="Dataset\VirtualManagerPersonality\Management.jsonl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Dataset\VirtualManagerPersonality\OrganizationalTheoryAndBehavior.json">
+    <Content Include="Dataset\VirtualManagerPersonality\OrganizationalTheoryAndBehavior.jsonl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Dataset\VirtualManagerPersonality\ConflictResolution.json">
+    <Content Include="Dataset\VirtualManagerPersonality\ConflictResolution_1_0_0.jsonl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Dataset\VirtualManagerPersonality\LeadeshipStyle.json">
+    <Content Include="Dataset\VirtualManagerPersonality\LeadeshipStyle.jsonl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Dataset\CompanySpecific\CompanyVisionAndMission.json">
@@ -61,6 +65,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
     <PackageReference Include="OpenAI" Version="1.11.0" />
   </ItemGroup>

@@ -20,10 +20,10 @@ namespace PoC.VirtualManager.FineTuning.Infrastructure
     /// <summary>
     /// Data sourcing pattern.
     /// </summary>
-    public class DataSetControRepository : MongoDbRepository<DataSetControl>, IDataSetControlRepository
+    public class DataSetControlRepository : MongoDbRepository<DataSetControl>, IDataSetControlRepository
     {
         //TODO keep track of scripts ran
-        public DataSetControRepository(string mongoDbConnectionString,
+        public DataSetControlRepository(string mongoDbConnectionString,
             string databaseName) 
             : base(new MongoDbSettings
             {
@@ -36,7 +36,7 @@ namespace PoC.VirtualManager.FineTuning.Infrastructure
 
         public async Task<DataSetControl> GetLatestByNameAsync(string teamName, CancellationToken cancellationToken)
         {
-            var filter = Builders<DataSetControl>.Filter.Eq(t => t.ScriptName, teamName);
+            var filter = Builders<DataSetControl>.Filter.Eq(t => t.FileName, teamName);
 
             return await (await GetOrCreateCollectionAsync(cancellationToken))
                 .Find(filter)

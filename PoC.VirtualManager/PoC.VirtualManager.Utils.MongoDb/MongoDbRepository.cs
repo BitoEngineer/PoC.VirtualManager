@@ -10,7 +10,7 @@ namespace PoC.VirtualManager.Utils.MongoDb
         protected readonly MongoClient Client;
         protected readonly Lazy<IMongoDatabase> Database;
 
-        private IMongoCollection<T> _collection;
+        private IMongoCollection<T> _collection; //TODO this may be a bad idea 
 
         public MongoDbRepository(MongoDbSettings settings)
             : this(MongoClientSettings.FromConnectionString(settings.ConnectionString))
