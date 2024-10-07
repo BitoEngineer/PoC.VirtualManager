@@ -18,7 +18,9 @@ using PoC.VirtualManager.Slack.Client.Models.Messaging;
 using System.Collections.Concurrent;
 using System.Text.Json;
 using System.Threading.Channels;
+using Microsoft.SemanticKernel.Agents.OpenAI;
 using ChannelId = System.String;
+using Microsoft.SemanticKernel.Agents;
 
 namespace PoC.VirtualManager.Brain.TemporalLobe
 {
@@ -33,6 +35,8 @@ namespace PoC.VirtualManager.Brain.TemporalLobe
         private readonly Personality _personality;
 
         private readonly ConcurrentDictionary<ChannelId, ChatHistory> _chatsHistory;
+
+        private readonly ConcurrentDictionary<ChannelId, OpenAIAssistantAgent> _agentsByChannel;
 
         public InteractionsEvaluatorBackgroundService(ILogger<SlackProcessorBackgroundService> logger, 
             [FromKeyedServices("slack-interactions-channel")] Channel<SlackInteractionsQueueItem> slackInteractionsChannel, 
@@ -139,6 +143,9 @@ namespace PoC.VirtualManager.Brain.TemporalLobe
 
         private ChatHistory GetOrCreateChatHistory(SlackInteractionsQueueItem interactions)
         {
+            OpenAIAssistantAgent.CreateAsync
+
+
             if (!_chatsHistory.TryGetValue(interactions.ChannelId, out ChatHistory chatHistory))
             {
                 var leadershipStyleDescription = LeadershipDescriptions.LeadershipStyleDescriptions[_personality.LeadershipStyle];
